@@ -1,4 +1,4 @@
-<?php include "modulos/conexion.php"; ?>
+<?php include "module/conexion.php"; ?>
 <?php
 //Recepcionamos el campo proceso
 $proceso = $_POST['proceso'];
@@ -29,7 +29,7 @@ if($proceso=="Iniciar"){
 		$_SESSION['xUsuario']	= $xUsuario;
 		$_SESSION['xVisitante']	= $xVisitante;
 		
-		header ("Location: dashboard/index.php");
+		header ("Location: general.php");
 	}else{
 		header ("Location: seguridad.php");
 	}

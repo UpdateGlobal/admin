@@ -1,0 +1,15 @@
+.sidebar-header, .sidebar-footer {
+    height: 108px;
+}
+
+.sidebar-header {
+    background-color: #00b6b8;
+}
+
+.sidebar-header img {
+    width: 100%;
+}
+
+.sidebar .menu:not(.menu-bordery)>.menu-item.active>.menu-link {
+    background-color: #01b5b8;
+}

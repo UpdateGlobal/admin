@@ -1,33 +1,21 @@
-<?php include("modulos/conexion.php"); ?>
+<?php include("module/conexion.php"); ?>
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<?php include("includes/head.php"); ?>
-	<meta http-equiv="refresh" content="3;URL=index.php">
-</head>
-<body>
-	<div id="loading">
-		<div>
-			<div></div>
-		    <div></div>
-		    <div></div>
-		</div>
-	</div>
-	<div id="content" class="c-login clearfix">
-		<div class="header" style="height:auto;">
-			<a href="index.php"><img src="images/meta/<?php echo $xLogo; ?>"></a>
-		</div>
-		<div class="breadcrumbs">
-			<i class="fa fa-key"></i> Login
-		</div>
-        <div class="widget-content">
-        	<form id="fcms-intro" name="fcms" method="post" action="">
-		        <p>¡ LO SENTIMOS UD. NO ES UN USUARIO AUTORIZADO POR EL SISTEMA !</p>
-	    	    <p>Intentelo de nuevo colocando su email y</p>
-        		<p>clave correcto.</p>
-			</form>
-		</div>
-	</div>
-	<?php include("includes/footer.php"); ?>
-</body>
+<html lang="es">
+  <head>
+    <?php header ('Content-type: text/html; charset=utf-8'); include("module/head.php"); ?>
+    <meta http-equiv="refresh" content="3;URL=index.php">
+  </head>
+
+  <body class="min-h-fullscreen bg-img center-vh p-20" style="background-image: url(assets/img/bg/2.jpg);" data-overlay="7">
+
+    <div class="card card-round card-shadowed px-50 py-30 w-400px mb-0" style="max-width: 100%">
+      <h5 class="text-uppercase">Sign in</h5>
+      <br>
+      <p><strong>¡LO SENTIMOS UD. NO ES UN USUARIO AUTORIZADO POR EL SISTEMA!</strong></p>
+	  <p>Intentelo de nuevo colocando su email y clave correcto.</p>
+    </div>
+
+    <?php include("module/footer.php") ?>
+
+  </body>
 </html>
