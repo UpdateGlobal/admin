@@ -1,0 +1,169 @@
+a:hover, a:focus{
+	text-decoration:none;
+}
+
+.boton-editar{
+	font-size:24px;
+	color:#e5b032;
+	text-decoration:none;
+    position: relative;
+    z-index: 9;
+}
+
+.boton-editar:hover, .boton-editar:focus{
+	color:#c39016;
+	text-decoration:none;
+}
+
+.boton-eliminar{
+	font-size:24px;
+	color:#c5464c;
+	text-decoration:none;
+    position: relative;
+    z-index: 9;
+}
+
+.boton-eliminar-bloqueado {
+    color: #999b9e;
+}
+
+.jackbox-modal * {
+    -moz-box-sizing: inherit;
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+    -webkit-backface-visibility: inherit;
+}
+
+.boton-eliminar:hover, .boton-eliminar:focus{
+	color:#a33139;
+	text-decoration:none;
+}
+
+.boton-eliminar-bloqueado:hover, .boton-eliminar-bloqueado:focus{
+    color: #999b9e;
+}
+
+.boton-nuevo{
+	font-size:24px;
+	color:#3b7db6;
+	text-decoration:none;
+    position: relative;
+    z-index: 9;
+}
+
+.boton-nuevo:hover, .boton-nuevo:focus{
+	color:#29577e;
+	text-decoration:none;
+}
+
+.custom-input input[type="checkbox"] + label, .custom-input input[type="radio"] + label {
+    margin-top: -8px;
+}
+
+.nada{
+	display:none;
+}
+
+th {
+    text-align: center;
+}
+
+.custom-input {
+    float: none;
+}
+
+.custom-input input[type="checkbox"] + label {
+    padding-left: 10px;
+}
+
+#listagaleria ul {
+	padding-left:0px;
+	margin-left:0px;
+}
+
+#listagaleria ul li {
+    display: inline-block;
+}
+
+#listagaleria img:hover{
+	opacity:0.8;
+}
+
+.banner-int {
+    max-width: 240px;
+    width: 100%;
+}
+
+.fa-blogger {
+    background: url(images/blogger-cms.png) no-repeat center;
+    width: 23px;
+    height: 23px;
+    background-size: contain;
+    top: 3px;
+    position: relative;
+}
+
+.img-admin{
+	max-width:320px;
+	width:100%;
+}
+
+.noticia-int {
+    max-width: 180px;
+}
+
+label span {
+    font-size: 12px;
+    color: #8b898d;
+}
+
+.fcms{
+	margin-bottom:1em;
+}
+
+.separador-15{
+	height:15px;
+}
+
+.separador-20{
+	height:20px;
+}
+
+.buscador {
+    background: url(images/buscar.png) #fff no-repeat 8px 7px !important;
+    padding-left: 30px !important;
+}
+
+@media only screen and (max-width:1199px){
+
+}
+@media only screen and (max-width:991px){
+}
+@media only screen and (max-width:768px){
+	.quick-nav ul {
+    	float: none;
+	    text-align: center;
+	}
+	.quick-nav ul li {
+	    float: none;
+	}
+	.custom-input *::before {
+    	display: none !important;
+	}
+	
+	.dataTables_length {
+		display: none !important;
+	}
+
+	.dataTables_filter {
+		width: 100% !important;
+		float:none !important;
+	}
+
+	.TableTools {
+		display: none !important;
+	}
+}
+@media only screen and (max-width:480px){
+
+}

@@ -1,0 +1,326 @@
+/*******************
+*** Custom STYLE ***
+********************/
+
+/* Rename the file, add your custom overrides styling here and link to it from your HTML files */
+
+
+.olvidarclave{
+	margin-top: 6px;
+    font-size: 13px;
+}
+
+.img-admin {
+    max-width: 320px;
+    width: 100%;
+}
+
+#listagaleria ul {
+    padding-left: 0px;
+    margin-left: 0px;
+}
+
+#listagaleria ul li {
+    display: inline-block;
+}
+
+a:hover, a:focus{
+    text-decoration:none;
+}
+
+.boton-editar{
+    font-size:24px;
+    color:#e5b032;
+    text-decoration:none;
+    position: relative;
+    z-index: 9;
+}
+
+.boton-editar:hover, .boton-editar:focus{
+    color:#c39016;
+    text-decoration:none;
+}
+
+.boton-eliminar{
+    font-size:24px;
+    color:#c5464c;
+    text-decoration:none;
+    position: relative;
+    z-index: 9;
+}
+
+.boton-eliminar-bloqueado {
+    color: #999b9e;
+}
+
+.jackbox-modal * {
+    -moz-box-sizing: inherit;
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+    -webkit-backface-visibility: inherit;
+}
+
+.boton-eliminar:hover, .boton-eliminar:focus{
+    color:#a33139;
+    text-decoration:none;
+}
+
+.boton-eliminar-bloqueado:hover, .boton-eliminar-bloqueado:focus{
+    color: #999b9e;
+}
+
+.boton-nuevo{
+    font-size:24px;
+    color:#3b7db6;
+    text-decoration:none;
+    position: relative;
+    z-index: 9;
+}
+
+.boton-nuevo:hover, .boton-nuevo:focus{
+    color:#29577e;
+    text-decoration:none;
+}
+
+.custom-input input[type="checkbox"] + label, .custom-input input[type="radio"] + label {
+    margin-top: -8px;
+}
+
+.nada{
+    display:none;
+}
+
+.custom-input {
+    float: none;
+}
+
+.custom-input input[type="checkbox"] + label {
+    padding-left: 10px;
+}
+
+#listagaleria ul {
+    padding-left:0px;
+    margin-left:0px;
+}
+
+#listagaleria ul li {
+    display: inline-block;
+}
+
+#listagaleria img:hover{
+    opacity:0.8;
+}
+
+.banner-int {
+    max-width: 240px;
+    width: 100%;
+}
+
+.fa-blogger {
+    background: url(images/blogger-cms.png) no-repeat center;
+    width: 23px;
+    height: 23px;
+    background-size: contain;
+    top: 3px;
+    position: relative;
+}
+
+.img-admin{
+    max-width:320px;
+    width:100%;
+}
+
+.noticia-int {
+    max-width: 180px;
+}
+
+label span {
+    font-size: 12px;
+    color: #8b898d;
+}
+
+.fcms{
+    margin-bottom:1em;
+}
+
+.separador-15{
+    height:15px;
+}
+
+.separador-20{
+    height:20px;
+}
+
+.buscador {
+    background: url(images/buscar.png) #fff no-repeat 8px 7px !important;
+    padding-left: 30px !important;
+}
+
+.custom-input input[type="checkbox"] + label {
+    padding-left: 25px;
+}
+
+.main-nav li a i {
+    color: #9f9da3;
+}
+
+.main-nav li.collapsible a i {
+    color: #9f9da3;
+}
+
+.main-nav li.collapsible a:hover i{
+    color: #fff;
+}
+
+.main-nav li.collapsible.active a i {
+    color: #ffffff;
+}
+
+.main-nav li.collapsible.open > a {
+    background: -webkit-gradient(linear, 0 50%, 0 100%, from(#55b5d7), to(#3a7ab4));
+    background: -webkit-linear-gradient(top, #55b5d7, #3a7ab4);
+    background: -moz-linear-gradient(top, #55b5d7, #3a7ab4);
+    background: -o-linear-gradient(top, #55b5d7, #3a7ab4);
+    background: -ms-linear-gradient(top, #55b5d7, #3a7ab4);
+    background: linear-gradient(to bottom, #55b5d7, #3a7ab4);
+    color: #fff;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.34);
+}
+
+.main-nav li.collapsible.active ul.sub-menu li a {
+    position: relative;
+    background: none;
+    color: #9f9da3;
+    font-size: 14px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 40px;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.75);
+    box-shadow: none;
+}
+
+.main-nav li.collapsible.active ul.submenu li a i {
+    color: #9f9da3 !important;
+}
+
+.sub-menu li.collapsible.active ul.submenu li a {
+    padding: 10px 0 10px 65px;
+}
+
+.sub-menu li.activo {
+    background: #4e4b50;
+}
+
+.sub-menu li.activo a {
+    color:#fff !important;
+}
+
+.label a {
+    color: #fbfeff;
+    text-decoration: none;
+    text-decoration: underline;
+}
+
+.delete-all{
+    background: none;
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+/* File button */
+.input-block-level{
+    display:block;
+    width:100%;
+    min-height:30px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+}
+
+.btn-file{
+    overflow:hidden;
+    position:relative;
+    vertical-align:middle;
+    cursor:pointer;
+}
+
+.btn-file:hover{
+    cursor:pointer;
+}
+
+.btn-file>input{
+    position:absolute;
+    top:0;
+    right:0;
+    margin:0;
+    opacity:0;
+    filter:alpha(opacity=0);
+    transform:translate(-300px, 0) scale(4);
+    font-size:23px;
+    direction:ltr;
+    cursor:pointer;
+}
+
+.fileupload{
+    margin-bottom:9px;
+}
+.fileupload .uneditable-input{
+    display:inline-block;
+    margin-bottom:0px;
+    vertical-align:middle;
+    cursor:text;
+}
+.fileupload .thumbnail{overflow:hidden;display:inline-block;margin-bottom:5px;vertical-align:middle;text-align:center;}.fileupload .thumbnail>img{display:inline-block;vertical-align:middle;max-height:100%;}
+.fileupload .btn{vertical-align:middle;}
+.fileupload-exists .fileupload-new,.fileupload-new .fileupload-exists{display:none;}
+.fileupload-inline .fileupload-controls{display:inline;}
+.fileupload-new .input-append .btn-file{-webkit-border-radius:0 3px 3px 0;-moz-border-radius:0 3px 3px 0;border-radius:0 3px 3px 0;}
+.thumbnail-borderless .thumbnail{border:none;padding:0;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;}
+.fileupload-new.thumbnail-borderless .thumbnail{border:1px solid #ddd;}
+.control-group.warning .fileupload .uneditable-input{color:#a47e3c;border-color:#a47e3c;}
+.control-group.warning .fileupload .fileupload-preview{color:#a47e3c;}
+.control-group.warning .fileupload .thumbnail{border-color:#a47e3c;}
+.control-group.error .fileupload .uneditable-input{color:#b94a48;border-color:#b94a48;}
+.control-group.error .fileupload .fileupload-preview{color:#b94a48;}
+.control-group.error .fileupload .thumbnail{border-color:#b94a48;}
+.control-group.success .fileupload .uneditable-input{color:#468847;border-color:#468847;}
+.control-group.success .fileupload .fileupload-preview{color:#468847;}
+.control-group.success .fileupload .thumbnail{border-color:#468847;}
+
+
+@media only screen and (max-width:1199px){
+
+}
+@media only screen and (max-width:991px){
+}
+@media only screen and (max-width:768px){
+    .quick-nav ul {
+        float: none;
+        text-align: center;
+    }
+    .quick-nav ul li {
+        float: none;
+    }
+    .custom-input *::before {
+        display: none !important;
+    }
+    
+    .dataTables_length {
+        display: none !important;
+    }
+
+    .dataTables_filter {
+        width: 100% !important;
+        float:none !important;
+    }
+
+    .TableTools {
+        display: none !important;
+    }
+}
+@media only screen and (max-width:480px){
+
+}

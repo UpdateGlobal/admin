@@ -1,0 +1,120 @@
+@charset "utf-8";
+/* CSS Document */
+
+.img-responsive{
+	width:100%;
+}
+
+.jackbox-social {
+    display: none;
+}
+
+.fa-blogger {
+    background: url(images/blogger.png) no-repeat center;
+    width: 26px;
+    height: 25px;
+    background-size: contain;
+    top: 3px;
+    position: relative;
+}
+
+.clearfix{
+	clear:both;
+}
+
+.descripcion h3{
+	margin-top:0px;
+}
+
+.imagen-noticia{
+	float:left; 
+	margin-right:10px; 
+	width:180px; 
+	height:180px;
+	margin-bottom:10px;
+}
+
+.preciodetalle{
+	font-weight:bold;
+	font-size:15px;
+}
+
+.preciodetalleoferta{
+	font-weight:bold;
+	color:#00F;
+	font-size:18px;
+}
+
+.margin-bottom-20{
+	margin-bottom:10px;
+}
+
+@media only screen and (max-width:1024px){
+	/*.navbar-header {
+		float: none;
+	}
+	.navbar-toggle{
+		margin-right: 0px;
+	}
+	.navbar-brand {
+    	float: none;
+	    display: inline-block;
+	}
+	.navbar-toggle{
+		margin-right: 0px;
+	}
+	.navbar{
+		text-align: center;
+	}
+	.nav > li > a {
+	    position: relative;
+	    display: inline-block;
+	    padding: 10px 10px;
+	}
+	.navbar-right {
+		float: none !important;
+		display: inline-block;
+	}*/
+
+}
+
+@media only screen and (max-width:991px){
+	/*.navbar-header {
+		float: left;
+	}
+	.navbar-toggle{
+		margin-right: 0px;
+	}
+	.navbar-brand {
+    	float: left;
+	    display: block;
+	}
+	.navbar-toggle{
+		margin-right: 0px;
+	}
+	.navbar{
+		text-align:inherit;
+	}
+	.nav > li > a {
+	    position: relative;
+	    display: block;
+	    padding: 10px 10px;
+	}
+	.navbar-right {
+		float: right !important;
+		display: block;
+	}*/
+}
+
+@media only screen and (max-width:768px){
+	.img-portfolio {
+    	margin-bottom: 45px;
+	}
+	.imagen-noticia {
+	    float: none;
+	    margin-right: 0px;
+	    width: 100%;
+	    height: 100%;
+    	margin-bottom: 10px;
+	}
+}

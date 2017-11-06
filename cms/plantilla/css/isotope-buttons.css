@@ -1,0 +1,44 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* ---- isotope ---- */
+
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- .element-item ---- */
+
+.element-item {
+  position: relative;
+  float: left;
+  width: 23%;
+  margin: 1%;
+  display:block;
+}
+
+.element-item img {
+    width: 100%;
+}
+
+@media only screen and (max-width:991px){
+	.element-item {
+	    width: 48%;
+    	margin: 1%;
+	}
+}
+
+@media only screen and (max-width:767px){
+	.element-item {
+		width: 100%;
+		margin: 0;
+		float: none;
+	}
+	.element-item img {
+		width: 100%;
+		height: auto;
+	}
+}
