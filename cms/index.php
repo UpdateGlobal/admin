@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <?php header ('Content-type: text/html; charset=utf-8'); include("module/head.php"); ?>
+    <?php header ('Content-type: text/html; charset=iso8859-15'); include("module/head.php"); ?>
     <script>
       function Validar(){
         document.fcms.action = "validar-usuarios.php"
