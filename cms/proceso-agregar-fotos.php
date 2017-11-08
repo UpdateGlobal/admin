@@ -5,7 +5,7 @@ $uploadname 	= $_FILES['imagen'] ['name'];
 $uploadtempname	= $_FILES['imagen'] ['tmp_name'];
 
 if($id=='IG'){
-	$uploaddir = 'images/galerias/'.$uploadname;
+	$uploaddir = 'assets/img/galerias/'.$uploadname;
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
@@ -14,7 +14,7 @@ if($id=='IG'){
 }
 // Imagen subir Fotos
 if($id=='FO'){
-	$uploaddir = 'images/galerias/fotos/'.$uploadname;
+	$uploaddir = 'assets/img/galerias/fotos/'.$uploadname;
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
@@ -23,7 +23,7 @@ if($id=='FO'){
 }
 // Subir Imagen Video
 if($id=='IV'){
-	$uploaddir = 'images/videos/'.$uploadname;
+	$uploaddir = 'assets/img/videos/'.$uploadname;
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
@@ -33,7 +33,7 @@ if($id=='IV'){
 
 // Imagen Categoria productos
 if($id=='IC'){
-	$uploaddir = 'images/productos/categorias/'.$uploadname;
+	$uploaddir = 'assets/img/productos/categorias/'.$uploadname;
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
@@ -43,7 +43,7 @@ if($id=='IC'){
 
 // Imagen sub categoria productos
 if($id=='ISC'){
-	$uploaddir = 'images/productos/subcategoria/'.$uploadname;
+	$uploaddir = 'assets/img/productos/subcategoria/'.$uploadname;
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
@@ -53,7 +53,7 @@ if($id=='ISC'){
 
 // Subir Imagen productos
 if($id=='IP'){
-	$uploaddir = 'images/productos/'.$uploadname;
+	$uploaddir = 'assets/img/productos/'.$uploadname;
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
@@ -63,7 +63,7 @@ if($id=='IP'){
 
 // Subir Ficha Técnica
 if($id=='FT'){
-	$uploaddir = 'archivos/'.$uploadname;
+	$uploaddir = 'assets/archivos/'.$uploadname;
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
@@ -73,7 +73,7 @@ if($id=='FT'){
 
 // Subir Banner Grande
 if($id=='BG'){
-	$uploaddir = 'images/productos/bannerg/'.$uploadname;
+	$uploaddir = 'assets/img/productos/bannerg/'.$uploadname;
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
@@ -83,7 +83,7 @@ if($id=='BG'){
 
 // Subir Banner Chico
 if($id=='BC'){
-	$uploaddir = 'images/productos/bannerc/'.$uploadname;
+	$uploaddir = 'assets/img/productos/bannerc/'.$uploadname;
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
@@ -93,7 +93,7 @@ if($id=='BC'){
 
 // Subir Galeria de productos
 if($id=='IGP'){
-	$uploaddir = 'images/productos/galeria/'.$uploadname;
+	$uploaddir = 'assets/img/productos/galeria/'.$uploadname;
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
@@ -103,7 +103,7 @@ if($id=='IGP'){
 
 // Subir Facebook Logo
 if($id=='LOGO'){
-	$uploaddir = 'images/meta/'.$uploadname;
+	$uploaddir = 'assets/img/'.$uploadname;
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
@@ -113,7 +113,7 @@ if($id=='LOGO'){
 
 // Subir Facebook imagen 1
 if($id=='FIA'){
-	$uploaddir = 'images/meta/'.$uploadname;
+	$uploaddir = 'assets/img/'.$uploadname;
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
@@ -123,7 +123,7 @@ if($id=='FIA'){
 
 // Subir Facebook imagen 2
 if($id=='FIB'){
-	$uploaddir = 'images/meta/'.$uploadname;
+	$uploaddir = 'assets/img/'.$uploadname;
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
@@ -133,7 +133,7 @@ if($id=='FIB'){
 
 // Subir Facebook Icono
 if($id=='ICO'){
-	$uploaddir = 'images/meta/'.$uploadname;
+	$uploaddir = 'assets/img/'.$uploadname;
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
@@ -143,7 +143,7 @@ if($id=='ICO'){
 
 // Subir Imagen Nosotros
 if($id=='NOS'){
-	$uploaddir = 'images/nosotros/'.$uploadname;
+	$uploaddir = 'assets/img/nosotros/'.$uploadname;
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
@@ -153,7 +153,7 @@ if($id=='NOS'){
 
 // Subir Imagen a Carrusel
 if($id=='CAR'){
-	$uploaddir = 'images/carrusel/'.$uploadname;
+	$uploaddir = 'assets/img/carrusel/'.$uploadname;
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
@@ -163,7 +163,7 @@ if($id=='CAR'){
 
 // Subir Imagen a Banner
 if($id=='BAN'){
-	$uploaddir = 'images/banner/'.$uploadname;
+	$uploaddir = 'assets/img/banner/'.$uploadname;
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
@@ -173,7 +173,7 @@ if($id=='BAN'){
 
 // Subir Imagen a Noticias
 if($id=='NOT'){
-	$uploaddir = 'images/noticias/'.$uploadname;
+	$uploaddir = 'assets/img/noticias/'.$uploadname;
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
@@ -183,7 +183,7 @@ if($id=='NOT'){
 
 // Subir Imagen Portafolio
 if($id=='IPR'){
-	$uploaddir = 'images/portafolio/'.$uploadname;
+	$uploaddir = 'assets/img/portafolio/'.$uploadname;
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
@@ -193,7 +193,7 @@ if($id=='IPR'){
 
 // Imagen galería portafolio
 if($id=='IGPOR'){
-	$uploaddir = 'images/portafolio/galeria/'.$uploadname;
+	$uploaddir = 'assets/img/portafolio/galeria/'.$uploadname;
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
@@ -203,7 +203,7 @@ if($id=='IGPOR'){
 
 // Imagenes galerías
 if($id=='GAL'){
-	$uploaddir = 'images/galerias/'.$uploadname;
+	$uploaddir = 'assets/img/galerias/'.$uploadname;
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
@@ -213,7 +213,7 @@ if($id=='GAL'){
 
 // Imagenes galerías
 if($id=='IGGAL'){
-	$uploaddir = 'images/galerias/fotos/'.$uploadname;
+	$uploaddir = 'assets/img/galerias/fotos/'.$uploadname;
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
@@ -223,7 +223,7 @@ if($id=='IGGAL'){
 
 // Imagenes servicios
 if($id=='SER'){
-	$uploaddir = 'images/servicios/'.$uploadname;
+	$uploaddir = 'assets/img/servicios/'.$uploadname;
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
@@ -233,7 +233,7 @@ if($id=='SER'){
 
 // Imagenes servicios
 if($id=='SERGAL'){
-	$uploaddir = 'images/servicios/fotos/'.$uploadname;
+	$uploaddir = 'assets/img/servicios/fotos/'.$uploadname;
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
@@ -404,33 +404,30 @@ if($id=='SERGAL'){
 		window.close();
 	}
 </script>
-<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="assets/css/core.min.css" rel="stylesheet">
+<link href="assets/css/app.min.css" rel="stylesheet">
+<link href="assets/css/style.min.css" rel="stylesheet">
+<link href="assets/css/custom.css" rel="stylesheet">
 </head>
 <body>
-	<div class="widget grid12" style="margin-top:0px;">
-        <div class="widget-header">
-            <div class="widget-title">
-                <i class="fa fa-th"></i> Seleccionar archivo
-            </div>
-        </div> <!-- /widget-header -->
-        <div class="widget-content">
-            <div id="cajafoto">
-				<form action="" id="imagenes" class="imagenes" method="post" name="imagenes">
-                	<div class="form-int">
-                    	<div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    							<label>El archivo se subi&oacute; correctamente</label>
-                                <div style="height:10px;"></div>
-        						<input name="imagen" type="hidden" value="<?php echo basename($_FILES['imagen']['name']); ?>">
-        						<input type="hidden" name="xid" value="<?php echo $id; ?>">
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            	<button class="btn btn-red" type="button" name="boton" onClick="javascript:Cerrar();">Cerrar</button>
-                           </div>
-                       </div>
-                   </div>
-			    </form>
-            </div>
+	<div class="card" style="margin-bottom:0px;">
+        <h4 class="card-title"><strong>Seleccionar Archivo</strong></h4>
+        <div class="card-body">
+        	<form action="" id="imagenes" class="imagenes" method="post" name="imagenes">
+	        	<div class="row">
+	                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	    				<label>El archivo se subi&oacute; correctamente</label>
+	                    <div style="height:10px;"></div>
+	        			<input name="imagen" type="hidden" value="<?php echo basename($_FILES['imagen']['name']); ?>">
+	        			<input type="hidden" name="xid" value="<?php echo $id; ?>">
+	                </div>
+	            </div>
+	            <div class="row">
+	                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	                	<button class="btn btn-red" type="button" name="boton" onClick="javascript:Cerrar();">Cerrar</button>
+	                </div>
+	            </div>
+	        </form>
         </div>
 	</div>
 </body>

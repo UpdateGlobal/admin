@@ -2,7 +2,7 @@
     <footer class="site-footer">
     	<div class="row">
         	<div class="col-md-6">
-        		<p class="text-center text-md-left">Copyright © 2017 <a href="general.php">TheAdmin</a>. Todos los derechos Reservados.</p>
+        		<p class="text-center text-md-left">Copyright © 2017 <a href="general.php">Update Global Admin</a>. Todos los derechos Reservados.</p>
         	</div>
 
         	<div class="col-md-6">

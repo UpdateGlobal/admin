@@ -100,7 +100,7 @@ if ($eliminar == "true") {
 							</div>
 						</div>
 						<div class="widget-content">
-                        	<a class="btn btn-blue" href="<?php if($xVisitante=="No"){ ?>banner-nuevo.php<?php }else{ ?>javascript:visitante();<?php } ?>"><i class="fa fa-plus" aria-hidden="true"></i> A&ntilde;adir nuevo</a>
+                        	<a class="btn btn-info" href="<?php if($xVisitante=="No"){ ?>banner-nuevo.php<?php }else{ ?>javascript:visitante();<?php } ?>"><i class="fa fa-plus"></i> A&ntilde;adir nuevo</a>
                             <hr>
 							<form name="fcms" method="post" action="">
                                 <table class="text-center" width="100%" border="1" id="banners">

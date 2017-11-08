@@ -14,6 +14,7 @@
     <link href="assets/css/core.min.css" rel="stylesheet">
     <link href="assets/css/app.min.css" rel="stylesheet">
     <link href="assets/css/style.min.css" rel="stylesheet">
+    <link href="assets/css/table-responsive.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/custom.css" rel="stylesheet">
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="assets/img/<?php echo $xIco ?>">

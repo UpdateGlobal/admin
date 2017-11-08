@@ -35,7 +35,7 @@
 						<div class="widget-content">
                         	<div class="alert alert-info alert-dismissible" role="alert">
                             	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                Metatags son los nombres, descripci&oacute;n y palabras clave con las que apareceran su web para los buscadores y redes sociales.
+                                Metatags son los nombres, descripción y palabras clave con las que apareceran su web para los buscadores y redes sociales
 							</div>
                             <?php
 								$consultarMet = 'SELECT * FROM metatags';
