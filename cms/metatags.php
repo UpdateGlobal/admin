@@ -59,7 +59,7 @@
                   </li>
                   <li class="list-group-item">
                     <strong>Logotipo de la web:</strong><br>
-                    <img class="d-block b-1 border-light hover-shadow-2 p-1" src="assets/img/<?php echo $xLogo; ?>" />
+                    <img class="d-block b-1 border-light hover-shadow-2 p-1" src="assets/img/meta/<?php echo $xLogo; ?>" />
                   </li>
                   <li class="list-group-item">
                     <strong>Descripción:</strong><br>
@@ -77,8 +77,8 @@
                     <strong>Imagenes para redes sociales:</strong><br>
                     <div id="listagaleria">
                       <ul>
-                        <li><img class="d-block b-1 border-light hover-shadow-2 p-1" src="http://<?php echo $xUrl; ?>/cms/assets/img/<?php echo $xFace1; ?>" /></li>
-                        <li><img class="d-block b-1 border-light hover-shadow-2 p-1" src="http://<?php echo $xUrl; ?>/cms/assets/img/<?php echo $xFace2; ?>" /></li>
+                        <li><img class="d-block b-1 border-light hover-shadow-2 p-1" src="http://<?php echo $xUrl; ?>/cms/assets/img/meta/<?php echo $xFace1; ?>" /></li>
+                        <li><img class="d-block b-1 border-light hover-shadow-2 p-1" src="http://<?php echo $xUrl; ?>/cms/assets/img/meta/<?php echo $xFace2; ?>" /></li>
                       </ul>
                     </div>
                   </li>

@@ -8,7 +8,17 @@
       </header>
 
       <div class="sidebar-profile">
-        <img class="avatar" src="assets/img/avatar/1.jpg" alt="...">
+        <?php
+          $consultaUsu  = "SELECT * FROM usuarios WHERE cod_usuario='$xCodigo'";
+          $ejecutarUsu  = mysqli_query($enlaces,$consultaUsu) or die('Consulta fallida: ' . mysqli_error($enlaces));
+          $filaUsu      = mysqli_fetch_array($ejecutarUsu);
+            $Uimagen    = $filaUsu['imagen'];
+        ?>
+        <?php if($Uimagen==null){ ?>
+        <img class="avatar" src="assets/img/avatar/default.jpg" />
+        <?php }else{ ?>
+        <img class="avatar" src="assets/img/avatar/<?php echo $Uimagen; ?>" />
+        <?php } ?>
         <div class="profile-info">
           <h4 class="mb-0"><?php echo $xUsuario; ?></h4>
           <p><?php echo $xAlias ?></p>

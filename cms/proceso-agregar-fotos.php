@@ -103,7 +103,7 @@ if($id=='IGP'){
 
 // Subir Facebook Logo
 if($id=='LOGO'){
-	$uploaddir = 'assets/img/'.$uploadname;
+	$uploaddir = 'assets/img/meta/'.$uploadname;
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
@@ -113,7 +113,7 @@ if($id=='LOGO'){
 
 // Subir Facebook imagen 1
 if($id=='FIA'){
-	$uploaddir = 'assets/img/'.$uploadname;
+	$uploaddir = 'assets/img/meta/'.$uploadname;
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
@@ -123,7 +123,7 @@ if($id=='FIA'){
 
 // Subir Facebook imagen 2
 if($id=='FIB'){
-	$uploaddir = 'assets/img/'.$uploadname;
+	$uploaddir = 'assets/img/meta/'.$uploadname;
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
@@ -133,7 +133,17 @@ if($id=='FIB'){
 
 // Subir Facebook Icono
 if($id=='ICO'){
-	$uploaddir = 'assets/img/'.$uploadname;
+	$uploaddir = 'assets/img/meta/'.$uploadname;
+	if(move_uploaded_file($uploadtempname, $uploaddir)){
+		$mensaje = "El archivo subi&oacute; correctamente";
+	}else{
+		$mensaje = "El archivo no se subi&oacute;";  
+	}
+}
+
+// Subir Avatar
+if($id=='USU'){
+	$uploaddir = 'assets/img/avatar/'.$uploadname;
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
@@ -295,6 +305,9 @@ if($id=='SERGAL'){
 			if(valor=="ICO") {
 				opener.window.fcms.ico.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
 			}
+			if(valor=="USU") {
+				opener.window.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+			}
 			if(valor=="NOS") {
 				opener.window.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
 			}
@@ -344,61 +357,64 @@ if($id=='SERGAL'){
 				window.opener.document.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
 			}
 			if(valor=="IP") {
-				opener.window.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+				window.opener.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
 			}
 			if(valor=="FT") {
-				opener.window.fcms.ficha_tecnica.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+				window.opener.fcms.ficha_tecnica.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
 			}
 			if(valor=="BG") {
-				opener.window.fcms.banner_grande.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+				window.opener.fcms.banner_grande.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
 			}
 			if(valor=="BC") {
-				opener.window.fcms.banner_chico.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+				window.opener.fcms.banner_chico.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
 			}
 			if(valor=="IGP") {
-				opener.window.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+				window.opener.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
 			}
 			if(valor=="LOGO") {
-				opener.window.fcms.logo.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+				window.opener.fcms.logo.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
 			}
 			if(valor=="FIA") {
-				opener.window.fcms.face1.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+				window.opener.fcms.face1.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
 			}
 			if(valor=="FIB") {
-				opener.window.fcms.face2.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+				window.opener.fcms.face2.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
 			}
 			if(valor=="ICO") {
-				opener.window.fcms.ico.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+				window.opener.fcms.ico.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+			}
+			if(valor=="USU") {
+				window.opener.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
 			}
 			if(valor=="NOS") {
-				opener.window.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+				window.opener.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
 			}
 			if(valor=="CAR") {
-				opener.window.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+				window.opener.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
 			}
 			if(valor=="BAN") {
-				opener.window.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+				window.opener.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
 			}
 			if(valor=="NOT") {
-				opener.window.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+				window.opener.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
 			}
 			if(valor=="IPR") {
-				opener.window.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+				window.opener.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
 			}
 			if(valor=="IGPOR") {
-				opener.window.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+				window.opener.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
 			}
 			if(valor=="GAL") {
-				opener.window.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+				window.opener.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
 			}
 			if(valor=="IGGAL") {
-				opener.window.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+				window.opener.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
 			}
 			if(valor=="SER") {
-				opener.window.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+				window.opener.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
 			}
 			if(valor=="SERGAL") {
-				opener.window.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+				window.opener.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
 			}
 		}
 		window.close();

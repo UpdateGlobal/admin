@@ -3,7 +3,7 @@
         $consultarMet = 'SELECT * FROM metatags';
         $resultadoMet = mysqli_query($enlaces,$consultarMet) or die('Consulta fallida: ' . mysqli_error($enlaces));
         while($filaMet = mysqli_fetch_array($resultadoMet)){
-            $xCodigo    = $filaMet['cod_meta'];
+            $xCodmeta    = $filaMet['cod_meta'];
             $xTitulo    = utf8_encode($filaMet['titulo']);
             $xIco       = $filaMet['ico'];
     ?>
