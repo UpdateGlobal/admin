@@ -134,7 +134,7 @@ if($proceso=="Actualizar"){
                   <label class="col-form-label" for="estado">Estado:</label>
                 </div>
                 <div class="col-8 col-lg-10">
-                  <input type="checkbox" name="estado" data-size="small" data-provide="switchery" value="1" <?php if($estado="1"){echo "checked";} ?>>
+                  <input type="checkbox" name="estado" data-size="small" data-provide="switchery" value="1" <?php if($estado=="1"){echo "checked";} ?>>
                 </div>
               </div>
               

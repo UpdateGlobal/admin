@@ -83,7 +83,7 @@ if($proceso == "Actualizar"){
         <span class="dot3"></span>
       </div>
     </div>
-    <?php include("module/menu.php"); ?>
+    <?php $menu="inicio"; include("module/menu.php"); ?>
     <?php include("module/header.php"); ?>
     <!-- Main container -->
     <main>
@@ -94,7 +94,7 @@ if($proceso == "Actualizar"){
             <small>Metatags son los nombres, descripción y palabras clave con las que apareceran su web para los buscadores y redes sociales</small>
           </h1>
         </div>
-        <?php $page = "metatags"; include("module/menu-inicio.php"); ?>
+        <?php $page="metatags"; include("module/menu-inicio.php"); ?>
       </header><!--/.header -->
       <div class="main-content">
         <div class="card">

@@ -12,12 +12,12 @@ if($proceso == "Registrar"){
 	$links				= mysqli_real_escape_string($enlaces, $_POST['links']);
 	$orden				= $_POST['orden'];
 	$estado				= $_POST['estado'];
-	$insertarBanner = "INSERT INTO social (type, links, orden, estado)VALUE('$type', '$links', '$orden', '$estado')";
-	$resultadoInsertar = mysqli_query($enlaces,$insertarBanner);
+	$insertarBanner		= "INSERT INTO social (type, links, orden, estado)VALUE('$type', '$links', '$orden', '$estado')";
+	$resultadoInsertar	= mysqli_query($enlaces,$insertarBanner);
 	$mensaje = "<div class='alert alert-success' role='alert'>
 					<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
 					<p><strong>Nota:</strong> El enlace se registr&oacute; con exitosamente. <a href='social.php'>Ir a Redes Sociales</a></p>
-                </div>";
+				</div>";
 }
 ?>
 <!DOCTYPE html>

@@ -8,14 +8,15 @@ if (isset($_REQUEST['proceso'])) {
   $proceso  = "";
 }
 if($proceso == "Registrar"){
-  $imagen       = $_POST['imagen'];
-  $orden        = $_POST['orden'];
-  $estado       = $_POST['estado'];
-  $insertarCarrusel = "INSERT INTO carrusel(imagen, orden, estado)VALUE('$imagen', '$orden', '$estado')";
-  $resultadoInsertar = mysqli_query($enlaces,$insertarCarrusel);
+  $type       = $_POST['type'];
+  $links      = mysqli_real_escape_string($enlaces, $_POST['links']);
+  $orden      = $_POST['orden'];
+  $estado     = $_POST['estado'];
+  $insertarBanner = "INSERT INTO social (type, links, orden, estado)VALUE('$type', '$links', '$orden', '$estado')";
+  $resultadoInsertar = mysqli_query($enlaces,$insertarBanner);
   $mensaje = "<div class='alert alert-success' role='alert'>
           <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-          <strong>Nota:</strong> La Imagen se registr&oacute; exitosamente. <a href='carrusel.php'>Ir a Carruseles</a>
+          <strong>Nota:</strong> El enlace se registr&oacute; con exitosamente. <a href='sociales.php'>Ir a Redes Sociales</a>
         </div>";
 }
 ?>
@@ -26,21 +27,18 @@ if($proceso == "Registrar"){
     <script type="text/javascript" src="assets/js/rutinas.js"></script>
     <script>
       function Validar(){
-        if(document.fcms.imagen.value==""){
-          alert("Debe subir una imagen");
-          return;
+        if(document.fcms.links.value==""){
+          alert("Debe colocar el enlace de su cuenta");
+          document.fcms.links.focus();
+          return; 
         }
-        document.fcms.action = "carrusel-nuevo.php";
+        document.fcms.action = "social-nuevo.php";
         document.fcms.proceso.value="Registrar";
         document.fcms.submit();
-      }
-      function Imagen(codigo){
-        url = "agregar-foto.php?id=" + codigo;
-        AbrirCentro(url,'Agregar', 475, 180, 'no', 'no');
-      }
-      function soloNumeros(e){
-        var key = window.Event ? e.which : e.keyCode
-        return ((key >= 48 && key <= 57) || (key==8))
+      } 
+      function soloNumeros(e){ 
+        var key = window.Event ? e.which : e.keyCode 
+        return ((key >= 48 && key <= 57) || (key==8)) 
       }
     </script>
   </head>
@@ -53,38 +51,53 @@ if($proceso == "Registrar"){
         <span class="dot3"></span>
       </div>
     </div>
-    <?php $menu="inicio"; include("module/menu.php"); ?>
+    <?php $menu="social"; include("module/menu.php"); ?>
     <?php include("module/header.php"); ?>
     <!-- Main container -->
     <main>
       <header class="header bg-ui-general">
         <div class="header-info">
           <h1 class="header-title">
-            <strong>Carrusel</strong>
-            <small>
-              
-            </small>
+            <strong>Redes Sociales</strong>
+            <small></small>
           </h1>
         </div>
-        <?php $page="carrusel"; include("module/menu-inicio.php"); ?>
       </header><!--/.header -->
       <div class="main-content">
         <div class="card">
-          <h4 class="card-title"><strong>Carrusel Nuevo</strong></h4>
+          <h4 class="card-title"><strong>Registrar red social</strong></h4>
           <form class="fcms" name="fcms" method="post" action="" data-provide="validation" data-disable="false">
             <div class="card-body">
               <?php if(isset($mensaje)){ echo $mensaje; } else {}; ?>
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
-                  <label class="col-form-label require" for="imagen">Imagen:</label><br>
-                  <small>(310px x 210px)</small>
+                  <label class="col-form-label require" for="social">Bot&oacute;n de Red Social:</label>
                 </div>
-                <div class="col-4 col-lg-8">
-                  <input class="form-control" id="imagen" name="imagen" type="text" required>
-                  <div class="invalid-feedback"></div>
+                <div class="col-8 col-lg-10">
+                  <select name="type" id="type" class="form-control" id="social">
+                    <option value="fa-facebook-square">Facebook</option>
+                    <option value="fa-twitter-square">Twitter</option>
+                    <option value="fa-google-plus-official">Google+</option>
+                    <option value="fa-linkedin">Linkedin</option>
+                    <option value="fa-behance">Behance</option>
+                    <option value="fa-blogger">Blogger</option>
+                    <option value="fa-youtube-play">Youtube</option>
+                    <option value="fa-vimeo">Vimeo</option>
+                    <option value="fa-wordpress">Wordpress</option>
+                    <option value="fa-tumblr-square">Tumblr</option>
+                    <option value="fa-pinterest">Pinterest</option>
+                    <option value="fa-instagram">Instagram</option>
+                    <option value="fa-flickr">Flickr</option>
+                    <option value="fa-github">Github</option>
+                  </select>
                 </div>
+              </div>
+              <div class="form-group row">
                 <div class="col-4 col-lg-2">
-                  <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('CAR');" /><i class="fa fa-save"></i> Examinar</button>
+                  <label class="col-form-label" for="links">Enlace:</label>
+                </div>
+                <div class="col-8 col-lg-10">
+                  <input class="form-control" name="links" type="text" id="links" />
                 </div>
               </div>
               <div class="form-group row">
@@ -104,13 +117,11 @@ if($proceso == "Registrar"){
                 </div>
               </div>
             </div>
-
             <footer class="card-footer">
               <a href="carrusel.php" class="btn btn-secondary"><i class="fa fa-times"></i> Cancelar</a>
-              <button class="btn btn-bold btn-primary" type="button" name="boton" onClick="javascript:Validar();" /><i class="fa fa-chevron-circle-right"></i> Registrar Carrusel</button>
+              <button class="btn btn-bold btn-primary" type="button" name="boton" onClick="javascript:Validar();"><i class="fa fa-chevron-circle-right"></i> Registrar red social</button>
               <input type="hidden" name="proceso">
             </footer>
-
           </form>
         </div>
       </div><!--/.main-content -->
