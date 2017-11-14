@@ -128,7 +128,7 @@ if($proceso=="Actualizar"){
             </div>
             <footer class="card-footer">
               <a href="sociales.php" class="btn btn-secondary"><i class="fa fa-times"></i> Cancelar</a>
-              <button class="btn btn-bold btn-primary" type="button" name="boton" onClick="javascript:Validar();"><i class="fa fa-chevron-circle-right"></i> Editar red social</button>
+              <button class="btn btn-bold btn-primary" type="button" name="boton" onClick="javascript:Validar();"><i class="fa fa-refresh"></i> Editar red social</button>
               <input type="hidden" name="proceso">
               <input type="hidden" name="cod_social" value="<?php echo $cod_social; ?>">
             </footer>

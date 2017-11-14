@@ -22,7 +22,7 @@
       <header class="header bg-ui-general">
         <div class="header-info">
           <h1 class="header-title">
-            <strong>Banners</strong>
+            <strong>Nosotros</strong>
             <small></small>
           </h1>
         </div>
@@ -33,50 +33,163 @@
             <div class="card card-bordered">
               <h4 class="card-title"><strong>Acerca de Nosotros</strong></h4>
               <div class="card-body">
+                <div class="row">
+                  <?php
+                    $consultarCon = "SELECT * FROM contenidos WHERE cod_contenido='1'";
+                    $resultadoCon = mysqli_query($enlaces,$consultarCon) or die('Consulta fallida: ' . mysqli_error($enlaces));
+                    while($filaCon = mysqli_fetch_array($resultadoCon)){
+                      $xCodigo      = $filaCon['cod_contenido'];
+                      $xTitulo      = utf8_encode($filaCon['titulo_contenido']);
+                      $xImagen      = $filaCon['img_contenido'];
+                      $xContenido   = utf8_encode($filaCon['contenido']);
+                      $xEstado      = $filaCon['estado'];
+                  ?>
+                  <div <?php if($xImagen!=""){?> class="col-8 col-lg-8" <?php }else{ ?> class="col-12 col-lg-12" <?php } ?> >
+                    <h4><?php echo $xTitulo; ?></h4>
+                    <p><?php 
+                      $strCut = substr($xContenido,0,800);
+                      $xContenido = substr($strCut,0,strrpos($strCut, ' ')).'...';
+                      echo strip_tags($xContenido);
+                    ?></p>
+                    <hr>
+                    <p><strong>Estado: <?php if($xEstado=="1"){echo "[Activo]";}else{ echo "[Inactivo]"; } ?> </strong></p>
+                  </div>
+                  <?php if($xImagen!=""){?>
+                  <div class="col-4 col-lg-4">
+                    <img class="d-block b-1 border-light hover-shadow-2 p-1" src="assets/img/nosotros/<?php echo $xImagen; ?>" />
+                  </div>
+                   <?php } ?>
+                </div>
                 <?php
-                  $consultarCon = "SELECT * FROM contenidos WHERE cod_contenido='1'";
-                  $resultadoCon = mysqli_query($enlaces,$consultarCon) or die('Consulta fallida: ' . mysqli_error($enlaces));
-                  while($filaCon = mysqli_fetch_array($resultadoCon)){
-                    $xCodigo      = $filaCon['cod_contenido'];
-                    $xTitulo      = utf8_encode($filaCon['titulo_contenido']);
-                    $xImagen      = $filaCon['img_contenido'];
-                    $xContenido   = utf8_encode($filaCon['contenido']);
-                    $xEstado      = $filaCon['estado'];
+                  }
+                  mysqli_free_result($resultadoCon);
                 ?>
-                <div <?php if($xImagen!=""){?> class="col-8 col-lg-8" <?php }else{ ?> class="col-12 col-lg-12" <?php } ?>>
-                <p><strong><?php echo $xTitulo; ?></strong></p>
-                <p><?php 
-                  $strCut = substr($xContenido,0,800);
-                  $xContenido = substr($strCut,0,strrpos($strCut, ' ')).'...';
-                  echo strip_tags($xContenido);
-                ?></p>
-                <hr>
-                <div class="clearfix">
-                  <p><strong><i class="fa fa-caret-square-o-right" aria-hidden="true"></i> <?php if($xEstado=="1"){echo "[Activo]";}else{ echo "[Inactivo]"; } ?> </strong></p>
-                </div>
-
-                </div>
-              <?php if($xImagen!=""){?>
-
-                <img class="thumbnail img-admin" src="images/nosotros/<?php echo $xImagen; ?>" />
-              <?php }else{ ?>
-              
-              <?php } ?>
-              <?php
-                }
-                mysqli_free_result($resultadoCon);
-              ?>
-              <a href="nosotros-edit.php?cod_contenido=<?php echo $xCodigo; ?>" class="btn btn-bold btn-primary">
-                <i class="fa fa-refresh"></i> Editar Descripci&oacute;n
-              </a>
-
-
-                
+              </div>
+              <div class="publisher bt-1 border-light">
+                <a href="nosotros-edit.php?cod_contenido=<?php echo $xCodigo; ?>" class="btn btn-bold btn-primary"><i class="fa fa-refresh"></i> Editar Nosotros</a>
               </div>
             </div>
           </div>
         </div>
-      </div>
+        <div class="row">
+          <div class="col-4 col-lg-4">
+            <div class="col-md-12">
+              <div class="card card-bordered">
+                <h4 class="card-title"><strong>Misión</strong></h4>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-12 col-lg-12">
+                      <?php
+                        $consultarCon = "SELECT * FROM contenidos WHERE cod_contenido='2'";
+                        $resultadoCon = mysqli_query($enlaces,$consultarCon) or die('Consulta fallida: ' . mysqli_error($enlaces));
+                        while($filaCon = mysqli_fetch_array($resultadoCon)){
+                          $xCodigo      = $filaCon['cod_contenido'];
+                          $xTitulo      = utf8_encode($filaCon['titulo_contenido']);
+                          $xImagen      = $filaCon['img_contenido'];
+                          $xContenido   = utf8_encode($filaCon['contenido']);
+                          $xEstado      = $filaCon['estado'];
+                      ?>
+                      <img class="d-block b-1 border-light hover-shadow-2 p-1" src="assets/img/nosotros/<?php echo $xImagen; ?>" />
+                      <h5><?php echo $xTitulo; ?></h5>
+                      <p><?php 
+                          $strCut = substr($xContenido,0,200);
+                          $xContenido = substr($strCut,0,strrpos($strCut, ' ')).'...';
+                          echo strip_tags($xContenido);
+                        ?></p>
+                      <hr>
+                      <p><strong>Estado: <?php if($xEstado=="1"){echo "[Activo]";}else{ echo "[Inactivo]"; } ?> </strong></p>
+                      <?php
+                        }
+                        mysqli_free_result($resultadoCon);
+                      ?>
+                    </div>
+                  </div>
+                </div>
+                <div class="publisher bt-1 border-light">
+                  <a href="nosotros-edit.php?cod_contenido=<?php echo $xCodigo; ?>" class="btn btn-bold btn-primary"><i class="fa fa-refresh"></i> Editar Misión</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 col-lg-4">
+            <div class="col-md-12">
+              <div class="card card-bordered">
+                <h4 class="card-title"><strong>Visión</strong></h4>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-12 col-lg-12">
+                      <?php
+                        $consultarCon = "SELECT * FROM contenidos WHERE cod_contenido='3'";
+                        $resultadoCon = mysqli_query($enlaces,$consultarCon) or die('Consulta fallida: ' . mysqli_error($enlaces));
+                        while($filaCon = mysqli_fetch_array($resultadoCon)){
+                          $xCodigo      = $filaCon['cod_contenido'];
+                          $xTitulo      = utf8_encode($filaCon['titulo_contenido']);
+                          $xImagen      = $filaCon['img_contenido'];
+                          $xContenido   = utf8_encode($filaCon['contenido']);
+                          $xEstado      = $filaCon['estado'];
+                      ?>
+                      <img class="d-block b-1 border-light hover-shadow-2 p-1" src="assets/img/nosotros/<?php echo $xImagen; ?>" />
+                      <h5><?php echo $xTitulo; ?></h5>
+                      <p><?php 
+                          $strCut = substr($xContenido,0,200);
+                          $xContenido = substr($strCut,0,strrpos($strCut, ' ')).'...';
+                          echo strip_tags($xContenido);
+                        ?></p>
+                      <hr>
+                      <p><strong>Estado: <?php if($xEstado=="1"){echo "[Activo]";}else{ echo "[Inactivo]"; } ?> </strong></p>
+                      <?php
+                        }
+                        mysqli_free_result($resultadoCon);
+                      ?>
+                    </div>
+                  </div>
+                </div>
+                <div class="publisher bt-1 border-light">
+                  <a href="nosotros-edit.php?cod_contenido=<?php echo $xCodigo; ?>" class="btn btn-bold btn-primary"><i class="fa fa-refresh"></i> Editar Visión</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4 col-lg-4">
+            <div class="col-md-12">
+              <div class="card card-bordered">
+                <h4 class="card-title"><strong>Objetivos</strong></h4>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-12 col-lg-12">
+                      <?php
+                        $consultarCon = "SELECT * FROM contenidos WHERE cod_contenido='4'";
+                        $resultadoCon = mysqli_query($enlaces,$consultarCon) or die('Consulta fallida: ' . mysqli_error($enlaces));
+                        while($filaCon = mysqli_fetch_array($resultadoCon)){
+                          $xCodigo      = $filaCon['cod_contenido'];
+                          $xTitulo      = utf8_encode($filaCon['titulo_contenido']);
+                          $xImagen      = $filaCon['img_contenido'];
+                          $xContenido   = utf8_encode($filaCon['contenido']);
+                          $xEstado      = $filaCon['estado'];
+                      ?>
+                      <img class="d-block b-1 border-light hover-shadow-2 p-1" src="assets/img/nosotros/<?php echo $xImagen; ?>" />
+                      <h5><?php echo $xTitulo; ?></h5>
+                      <p><?php 
+                          $strCut = substr($xContenido,0,200);
+                          $xContenido = substr($strCut,0,strrpos($strCut, ' ')).'...';
+                          echo strip_tags($xContenido);
+                        ?></p>
+                      <hr>
+                      <p><strong>Estado: <?php if($xEstado=="1"){echo "[Activo]";}else{ echo "[Inactivo]"; } ?> </strong></p>
+                      <?php
+                        }
+                        mysqli_free_result($resultadoCon);
+                      ?>
+                    </div>
+                  </div>
+                </div>
+                <div class="publisher bt-1 border-light">
+                  <a href="nosotros-edit.php?cod_contenido=<?php echo $xCodigo; ?>" class="btn btn-bold btn-primary"><i class="fa fa-refresh"></i> Editar Objetivos</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       <?php include("module/footer_int.php"); ?>
     </main>
     <!-- END Main container -->

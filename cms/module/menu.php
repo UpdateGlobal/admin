@@ -84,7 +84,7 @@
               </li>
 
               <li class="menu-item">
-                <a class="menu-link" href="servicios_fotos.php">
+                <a class="menu-link" href="servicios-fotos.php">
                   <span class="dot"></span>
                   <span class="title">Fotos</span>
                 </a>
@@ -109,23 +109,23 @@
 
             <ul class="menu-submenu">
               <li class="menu-item">
+                <a class="menu-link" href="portafolio-categorias.php">
+                  <span class="dot"></span>
+                  <span class="title">Categor&iacute;as</span>
+                </a>
+              </li>
+
+              <li class="menu-item">
                 <a class="menu-link" href="portafolio.php">
                   <span class="dot"></span>
-                  <span class="title">Portafolio</span>
+                  <span class="title">Trabajos</span>
                 </a>
               </li>
 
               <li class="menu-item">
-                <a class="menu-link" href="portafolio_fotos.php">
+                <a class="menu-link" href="portafolio-fotos.php">
                   <span class="dot"></span>
-                  <span class="title">Portafolio fotos</span>
-                </a>
-              </li>
-
-              <li class="menu-item">
-                <a class="menu-link" href="portafolio_videos.php">
-                  <span class="dot"></span>
-                  <span class="title">Vídeos</span>
+                  <span class="title">Fotos Trabajos</span>
                 </a>
               </li>
 

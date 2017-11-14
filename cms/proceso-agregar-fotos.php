@@ -312,7 +312,7 @@ if($id=='SERGAL'){
 				opener.window.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
 			}
 			if(valor=="CAR") {
-				opener.window.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+				opener.window.fcms.img_contenido.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
 			}
 			if(valor=="BAN") {
 				opener.window.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
@@ -387,7 +387,7 @@ if($id=='SERGAL'){
 				window.opener.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
 			}
 			if(valor=="NOS") {
-				window.opener.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
+				window.opener.fcms.img_contenido.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
 			}
 			if(valor=="CAR") {
 				window.opener.fcms.imagen.value = "<?php echo basename($_FILES['imagen']['name']); ?>";
