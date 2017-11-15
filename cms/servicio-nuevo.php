@@ -11,8 +11,8 @@ if($proceso == "Registrar"){
   $titulo       = mysqli_real_escape_string($enlaces, $_POST['titulo']);
   $imagen       = $_POST['imagen'];
   $descripcion  = mysqli_real_escape_string($enlaces, $_POST['descripcion']);
-  $orden        = $_POST['orden'];
-  $estado       = $_POST['estado'];
+  if(isset($_POST['orden'])){$orden = $_POST['orden'];}else{$orden = 0;}
+  if(isset($_POST['estado'])){$estado = $_POST['estado'];}else{$estado = 0;}
     
   $insertarServicio = "INSERT INTO servicios(titulo, imagen, descripcion, orden, estado)VALUE('$titulo', '$imagen', '$descripcion', '$orden', '$estado')";
   $resultadoInsertar = mysqli_query($enlaces,$insertarServicio);

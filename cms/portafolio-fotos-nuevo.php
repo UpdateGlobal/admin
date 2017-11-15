@@ -17,14 +17,14 @@ $consultaNombre = "SELECT * FROM portafolio WHERE cod_portafolio='$cod_portafoli
 $resultadoNombre = mysqli_query($enlaces,$consultaNombre);
 
 if($proceso == "Registrar"){
-  $cod_portafolio   = $_POST['cod_portafolio'];
-  $imagen       = $_POST['imagen'];
-  $insertarGaleria = "INSERT INTO portafolio_galerias(cod_portafolio, imagen)VALUE('$cod_portafolio', '$imagen')";
-  $resultadoInsertar = mysqli_query($enlaces,$insertarGaleria);
+  $cod_portafolio     = $_POST['cod_portafolio'];
+  $imagen             = $_POST['imagen'];
+  $insertarGaleria    = "INSERT INTO portafolio_galerias(cod_portafolio, imagen)VALUE('$cod_portafolio', '$imagen')";
+  $resultadoInsertar  = mysqli_query($enlaces,$insertarGaleria);
   $mensaje = "<div class='alert alert-success' role='alert'>
           <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-          <p><strong>Nota:</strong> Se a&ntilde;adi&oacute; la imagen exitosamente. <a href='portafolio-galerias.php'>Ir a Galerias</a></p>
-                </div>";
+          <strong>Nota:</strong> Se a&ntilde;adi&oacute; la imagen exitosamente. <a href='portafolio-fotos.php'>Ir a Galerias</a>
+        </div>";
   header("Location: portafolio-fotos-nuevo.php?cod_portafolio=$cod_portafolio?nom_portafolio=$nom_portafolio");
 }
 ?>
@@ -38,9 +38,9 @@ if($proceso == "Registrar"){
         if(document.fcms.imagen.value==""){
           alert("Debe subir una imagen");
           document.fcms.imagen.focus();
-          return; 
+          return;
         }
-        document.fcms.action = "portafolio-galerias-nuevo.php";
+        document.fcms.action = "portafolio-fotos-nuevo.php";
         document.fcms.proceso.value="Registrar";
         document.fcms.submit();
       }
@@ -60,35 +60,37 @@ if($proceso == "Registrar"){
         <span class="dot3"></span>
       </div>
     </div>
-    <?php $menu="portafolio-fotos"; include("module/menu.php"); ?>
+    <?php $menu="portafolio"; include("module/menu.php"); ?>
     <?php include("module/header.php"); ?>
     <!-- Main container -->
     <main>
       <header class="header bg-ui-general">
         <div class="header-info">
           <h1 class="header-title">
-            <strong>Nosotros</strong>
+            <strong>Portafolio</strong>
             <small></small>
           </h1>
         </div>
-        <?php $page="portafolio-fotos"; include("module/menu-servicios.php"); ?>
+        <?php $page="portafoliogalerias"; include("module/menu-portafolio.php"); ?>
       </header><!--/.header -->
       <div class="main-content">
         <div class="card">
-          <h4 class="card-title"><strong>Editar Contenidos</strong></h4>
+          <h4 class="card-title"><strong>Editar Fotos de Trabajo</strong></h4>
           <form class="fcms" name="fcms" method="post" action="" data-provide="validation" data-disable="false">
             <div class="card-body">
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
-                  <label class="col-form-label" for="logo">Servicio:</label><br>
+                  <label class="col-form-label" for="logo">Portafolio:</label>
                 </div>
                 <div class="col-8 col-lg-10">
                   <?php
                     while($filaNom = mysqli_fetch_array($resultadoNombre)){
-                      $titulo = mysqli_real_escape_string($enlaces, $filaNom['titulo']);
+                      $xNomPorta = htmlspecialchars(utf8_encode($filaNom['nom_portafolio']));
                   ?>
-                    <strong><?php echo $titulo; ?></strong>
-                  <?php } ?>
+                    <strong><?php echo $xNomPorta; ?></strong>
+                  <?php
+                    }
+                  ?>
                 </div>
               </div>
               <div class="form-group row">
@@ -102,17 +104,17 @@ if($proceso == "Registrar"){
                 </div>
                 <div class="col-4 col-lg-2">
                   <?php if($xVisitante=="0"){ ?>
-                  <button class="btn btn-bold btn-info" type="button" name="boton4" onClick="javascript:Imagen('SERGAL');" /><i class="fa fa-save"></i> Examinar</button>
+                  <button class="btn btn-bold btn-info" type="button" name="boton4" onClick="javascript:Imagen('IGPOR');" /><i class="fa fa-save"></i> Examinar</button>
                   <?php } ?>
                 </div>
               </div>
               <div class="form-group row">
                 <div class="col-12 col-lg-12">
-                  <a href="servicios-fotos.php" class="btn btn-secondary"><i class="fa fa-times"></i> Cancelar</a>
+                  <a href="portafolio-fotos.php" class="btn btn-secondary"><i class="fa fa-reply"></i> Volver</a>
                   <button class="btn btn-bold btn-primary" type="button" name="boton" onClick="javascript:Validar();" /><i class="fa fa-plus-circle"></i> A&ntilde;adir Foto</button>
-                  <input type="hidden" name="proceso">
-                  <input type="hidden" name="cod_servicio" value="<?php echo $cod_servicio; ?>">                  
-                  <input type="hidden" name="titulo" value="<?php echo mysqli_real_escape_string($enlaces, $titulo); ?>">
+                  <input type="hidden" name="proceso" />
+                  <input type="hidden" name="cod_portafolio" value="<?php echo $cod_portafolio; ?>" />
+                  <input type="hidden" name="nom_portafolio" value="<?php echo $nom_portafolio; ?>" />
                 </div>
               </div>
             </div>
@@ -122,24 +124,23 @@ if($proceso == "Registrar"){
                 <ul>
                   <?php
                     while($filaFoto = mysqli_fetch_array($resultadoFotos)){
-                      $xCodigoFot = $filaFoto['cod_foto'];
-                      $xCodServicio = $filaFoto['cod_servicio'];
-                      $xFoto = $filaFoto['imagen'];
+                      $xCodigoGal     = $filaFoto['cod_galeria_portafolio'];
+                      $xCodportafolio = $filaFoto['cod_portafolio'];
+                      $xFoto  = $filaFoto['imagen'];
                   ?>
                   <li class="thumbnail">
-                    <a href="servicios-fotos-delete.php?cod_foto=<?php echo $xCodigoFot; ?>&cod_servicio=<?php echo $xCodServicio; ?>">
-                      <img class="d-block b-1 border-light hover-shadow-2 p-1" src="assets/img/servicios/fotos/<?php echo $xFoto; ?>" width="150" height="100">
+                    <a href="portafolio-fotos-delete.php?cod_galeria_portafolio=<?php echo $xCodigoGal; ?>&cod_portafolio=<?php echo $xCodportafolio; ?>">
+                      <img class="d-block b-1 border-light hover-shadow-2 p-1" src="assets/img/portafolio/fotos/<?php echo $xFoto; ?>" width="150" height="100" />
                     </a>
                   </li>
                   <?php
                     }
                   ?>
                 </ul>
-                <div class="separador-20"></div>
               </div>
             </footer>
           </form>
-        </div>                
+        </div>
       </div>
       <?php include("module/footer_int.php"); ?>
     </main>

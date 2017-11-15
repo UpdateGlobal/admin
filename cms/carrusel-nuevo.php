@@ -9,8 +9,8 @@ if (isset($_REQUEST['proceso'])) {
 }
 if($proceso == "Registrar"){
   $imagen       = $_POST['imagen'];
-  $orden        = $_POST['orden'];
-  $estado       = $_POST['estado'];
+  if(isset($_POST['orden'])){$orden = $_POST['orden'];}else{$orden = 0;}
+  if(isset($_POST['estado'])){$estado = $_POST['estado'];}else{$estado = 0;}
   $insertarCarrusel = "INSERT INTO carrusel(imagen, orden, estado)VALUE('$imagen', '$orden', '$estado')";
   $resultadoInsertar = mysqli_query($enlaces,$insertarCarrusel);
   $mensaje = "<div class='alert alert-success' role='alert'>

@@ -18,7 +18,7 @@ if($id=='FO'){
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
-		$mensaje = "El archivo no se subi&oacute;";  
+		$mensaje = "El archivo no se subi&oacute;";
 	}
 }
 // Subir Imagen Video
@@ -27,7 +27,7 @@ if($id=='IV'){
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
-		$mensaje = "El archivo no se subi&oacute;";  
+		$mensaje = "El archivo no se subi&oacute;";
 	}
 }
 
@@ -197,17 +197,17 @@ if($id=='IPR'){
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
-		$mensaje = "El archivo no se subi&oacute;";  
+		$mensaje = "El archivo no se subi&oacute;";
 	}
 }
 
 // Imagen galería portafolio
 if($id=='IGPOR'){
-	$uploaddir = 'assets/img/portafolio/galeria/'.$uploadname;
+	$uploaddir = 'assets/img/portafolio/fotos/'.$uploadname;
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
-		$mensaje = "El archivo no se subi&oacute;";  
+		$mensaje = "El archivo no se subi&oacute;";
 	}
 }
 
@@ -217,7 +217,7 @@ if($id=='GAL'){
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
-		$mensaje = "El archivo no se subi&oacute;";  
+		$mensaje = "El archivo no se subi&oacute;";
 	}
 }
 
@@ -227,7 +227,7 @@ if($id=='IGGAL'){
 	if(move_uploaded_file($uploadtempname, $uploaddir)){
 		$mensaje = "El archivo subi&oacute; correctamente";
 	}else{
-		$mensaje = "El archivo no se subi&oacute;";  
+		$mensaje = "El archivo no se subi&oacute;";
 	}
 }
 

@@ -18,7 +18,7 @@ $resultadoNombre = mysqli_query($enlaces,$consultaNombre);
 
 if($proceso == "Registrar"){
   $cod_servicio   = $_POST['cod_servicio'];
-  $imagen       = $_POST['imagen'];
+  $imagen         = $_POST['imagen'];
   $insertarservicio = "INSERT INTO servicios_fotos(cod_servicio, imagen)VALUE('$cod_servicio', '$imagen')";
   $resultadoInsertar = mysqli_query($enlaces,$insertarservicio);
   $mensaje = "<div class='alert alert-success' role='alert'>
@@ -113,7 +113,7 @@ if($proceso == "Registrar"){
               </div>
               <div class="form-group row">
                 <div class="col-12 col-lg-12">
-                  <a href="servicios-fotos.php" class="btn btn-secondary"><i class="fa fa-times"></i> Cancelar</a>
+                  <a href="servicios-fotos.php" class="btn btn-secondary"><i class="fa fa-reply"></i> Volver</a>
                   <button class="btn btn-bold btn-primary" type="button" name="boton" onClick="javascript:Validar();" /><i class="fa fa-plus-circle"></i> A&ntilde;adir Foto</button>
                   <input type="hidden" name="proceso">
                   <input type="hidden" name="cod_servicio" value="<?php echo $cod_servicio; ?>">                  

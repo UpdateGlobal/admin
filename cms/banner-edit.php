@@ -15,16 +15,16 @@ if($proceso == ""){
   $imagen = $filaBan['imagen'];
   $titulo = htmlspecialchars($filaBan['titulo']);
   $texto  = htmlspecialchars($filaBan['texto']);
-  $orden  = $filaBan['orden'];
+  $orden = $filaBan['orden'];
   $estado = $filaBan['estado'];
 }
 if($proceso=="Actualizar"){ 
-  $cod_banner     = $_POST['cod_banner'];
+  $cod_banner   = $_POST['cod_banner'];
   $imagen       = $_POST['imagen'];
   $titulo       = mysqli_real_escape_string($enlaces, $_POST['titulo']);
   $texto        = mysqli_real_escape_string($enlaces, $_POST['texto']);
-  $orden        = $_POST['orden'];
-  $estado       = $_POST['estado'];
+  if(isset($_POST['orden'])){$orden = $_POST['orden'];}else{$orden = 0;}
+  if(isset($_POST['estado'])){$estado = $_POST['estado'];}else{$estado = 0;}
   $actualizarBanner = "UPDATE banners SET cod_banner='$cod_banner', imagen='$imagen', titulo='$titulo', texto='$texto', orden='$orden', estado='$estado' WHERE cod_banner='$cod_banner'";
   $resultadoActualizar = mysqli_query($enlaces,$actualizarBanner) or die('Consulta fallida: ' . mysqli_error($enlaces));
   header("Location:banners.php");
@@ -72,9 +72,7 @@ if($proceso=="Actualizar"){
         <div class="header-info">
           <h1 class="header-title">
             <strong>Banners</strong>
-            <small>
-              
-            </small>
+            <small></small>
           </h1>
         </div>
         <?php $page="banners"; include("module/menu-inicio.php"); ?>
@@ -134,7 +132,7 @@ if($proceso=="Actualizar"){
                   <label class="col-form-label" for="estado">Estado:</label>
                 </div>
                 <div class="col-8 col-lg-10">
-                  <input type="checkbox" name="estado" data-size="small" data-provide="switchery" value="1" <?php if($estado=="1"){echo "checked";} ?>>
+                  <input type="checkbox" name="estado" data-size="small" data-provide="switchery" value="1" <?php if($estado=="1"){echo "checked";} ?> />
                 </div>
               </div>
               

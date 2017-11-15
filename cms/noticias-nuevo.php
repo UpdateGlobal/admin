@@ -12,7 +12,7 @@ if($proceso == "Registrar"){
   $imagen       = $_POST['imagen'];
   $noticia      = mysqli_real_escape_string($enlaces, $_POST['noticia']);
   $fecha        = $_POST['fecha'];
-  $estado       = $_POST['estado'];
+  if(isset($_POST['estado'])){$estado = $_POST['estado'];}else{$estado = 0;}
     
   $insertarNoticia = "INSERT INTO noticias(titulo, imagen, noticia, fecha, estado)VALUE('$titulo', '$imagen', '$noticia', '$fecha', '$estado')";
   $resultadoInsertar = mysqli_query($enlaces,$insertarNoticia);

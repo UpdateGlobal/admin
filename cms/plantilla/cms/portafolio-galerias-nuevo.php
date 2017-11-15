@@ -133,9 +133,9 @@ if($proceso == "Registrar"){
 								<ul>
 									<?php
                                         while($filaFoto = mysqli_fetch_array($resultadoFotos)){
-                                            $xCodigoGal = $filaFoto['cod_galeria_portafolio'];
-                                            $xCodportafolio = $filaFoto['cod_portafolio'];
-                                            $xFoto = $filaFoto['imagen'];
+                                            $xCodigoGal		= $filaFoto['cod_galeria_portafolio'];
+                                            $xCodportafolio	= $filaFoto['cod_portafolio'];
+                                            $xFoto			= $filaFoto['imagen'];
                                     ?>
                                     <li class="thumbnail"><a href="portafolio-galerias-delete.php?cod_galeria_portafolio=<?php echo $xCodigoGal; ?>&cod_portafolio=<?php echo $xCodportafolio; ?>"><img src="images/portafolio/galeria/<?php echo $xFoto; ?>" width="150" height="100"></a></li>
                                     <?php

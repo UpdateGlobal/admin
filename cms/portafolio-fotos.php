@@ -35,7 +35,7 @@
             <small></small>
           </h1>
         </div>
-        <?php $page="portafoliofotos"; include("module/menu-portafolio.php"); ?>
+        <?php $page="portafoliogalerias"; include("module/menu-portafolio.php"); ?>
       </header><!--/.header -->
       <div class="main-content">
         <div class="row">
@@ -76,7 +76,7 @@
                         <td><?php echo $xCategoria; ?></td>
                         <td><img class="d-block b-1 border-light hover-shadow-2 p-1" src="assets/img/portafolio/<?php echo $xImagen; ?>" /></td>
                         <td><?php echo $xOrden; ?></td>
-                        <td><a class="boton-nuevo <?php if($xVisitante=="Si"){ ?>boton-eliminar-bloqueado<?php } ?>" href="<?php if($xVisitante=="Si"){ ?>javascript:visitante();<?php }else{ ?>portafolio-fotos-nuevo.php?cod_portafolio=<?php echo $xCodigo; ?>&nom_portafolio=<?php echo $xPortafolio; ?><?php } ?>"><i class="fa fa-search"></i></a></td>
+                        <td><a class="boton-nuevo <?php if($xVisitante=="1"){ ?>boton-eliminar-bloqueado<?php } ?>" href="<?php if($xVisitante=="1"){ ?>javascript:visitante();<?php }else{ ?>portafolio-fotos-nuevo.php?cod_portafolio=<?php echo $xCodigo; ?>&nom_portafolio=<?php echo $xPortafolio; ?><?php } ?>"><i class="fa fa-search"></i></a></td>
                       </tr>
                       <?php }else{ ?><?php } ?>
                       <?php

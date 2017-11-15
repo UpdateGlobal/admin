@@ -14,7 +14,7 @@ if($proceso == "Registrar"){
   $usuario  = mysqli_real_escape_string($enlaces, $_POST['usuario']);
   $clave    = mysqli_real_escape_string($enlaces, $_POST['clave']);
   $visitante  = $_POST['visitante'];
-  $estado   = $_POST['estado'];
+  if(isset($_POST['estado'])){$estado = $_POST['estado'];}else{$estado = 0;}
     
   $validarUsuarios = "SELECT * FROM usuarios WHERE email='$email' OR usuario='$usuario'";
   $ejecutarValidar = mysqli_query($enlaces,$validarUsuarios) or die('Consulta fallida: ' . mysqli_error($enlaces));

@@ -10,8 +10,8 @@ if (isset($_REQUEST['proceso'])) {
 if($proceso == "Registrar"){
   $type       = $_POST['type'];
   $links      = mysqli_real_escape_string($enlaces, $_POST['links']);
-  $orden      = $_POST['orden'];
-  $estado     = $_POST['estado'];
+  if(isset($_POST['orden'])){$orden = $_POST['orden'];}else{$orden = 0;}
+  if(isset($_POST['estado'])){$estado = $_POST['estado'];}else{$estado = 0;}
   $insertarBanner = "INSERT INTO social (type, links, orden, estado)VALUE('$type', '$links', '$orden', '$estado')";
   $resultadoInsertar = mysqli_query($enlaces,$insertarBanner);
   $mensaje = "<div class='alert alert-success' role='alert'>

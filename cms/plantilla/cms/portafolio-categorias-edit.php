@@ -35,29 +35,24 @@ if($proceso=="Actualizar"){
     <script type="text/javascript" src="js/rutinas.js"></script>
 	<script>
 		function Validar(){
-			if(document.fcms.categoria.value==""){
-				alert("Debes ingresar un nombre a la categoria");
-				document.fcms.categoria.focus();
-				return;	
-			}
-			if(document.fcms.orden.value==""){
-				alert("Debe asignar un orden");
-				document.fcms.orden.focus();
-				return;
-			}
-			document.fcms.action = "portafolio-categorias-edit.php";
-			document.fcms.proceso.value="Actualizar";
-			document.fcms.submit();
-		}	
-		function Imagen(codigo){
-			url = "agregar-foto.php?id=" + codigo;
-			AbrirCentro(url,'Agregar', 475, 180, 'no', 'no');
-		}
-		function soloNumeros(e) 
-		{ 
-			var key = window.Event ? e.which : e.keyCode 
-			return ((key >= 48 && key <= 57) || (key==8)) 
-		}
+	      if(document.fcms.categoria.value==""){
+	        alert("Debes ingresar un nombre a la categoria");
+	        document.fcms.categoria.focus();
+	        return; 
+	      }
+	      document.fcms.action = "portafolio-categorias-edit.php";
+	      document.fcms.proceso.value="Actualizar";
+	      document.fcms.submit();
+	    } 
+	    function Imagen(codigo){
+	      url = "agregar-foto.php?id=" + codigo;
+	      AbrirCentro(url,'Agregar', 475, 180, 'no', 'no');
+	    }
+	    function soloNumeros(e) 
+	    { 
+	      var key = window.Event ? e.which : e.keyCode 
+	      return ((key >= 48 && key <= 57) || (key==8)) 
+	    }
 	</script>
 </head>
 <body>

@@ -1,7 +1,6 @@
 <?php include("module/conexion.php"); ?>
 <?php include("module/verificar.php"); ?>
 <?php
-$num = ""; 
 if (isset($_REQUEST['eliminar'])) {
   $eliminar = $_POST['eliminar'];
 } else {
@@ -48,20 +47,20 @@ if ($eliminar == "true") {
         document.fcms.proceso.value = "";
         estado = 0;
         for (i = 0; i < document.fcms.length; i++)
-            
+
         if(document.fcms.elements[i].name.substring(0,3) == "chk"){
           if(document.fcms.elements[i].checked == true){
             estado = 1
           }
         }
-          
+
         if (estado == 0) {
           if (seccion == "N"){
             alert("Debes de seleccionar un categoria.")
           }
           return
         }
-          
+
         procedimiento = "document.fcms." + proceso + ".value = true"
         eval(procedimiento)
         document.fcms.submit()    
@@ -123,7 +122,6 @@ if ($eliminar == "true") {
                           $xCategoria = utf8_encode($filaCat['categoria']);
                           $xOrden     = $filaCat['orden'];
                           $xEstado    = $filaCat['estado'];
-                          $num++;
                       ?>
                       <tr>
                         <td><?php echo $xCategoria; ?></td>

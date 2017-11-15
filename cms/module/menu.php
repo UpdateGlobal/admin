@@ -148,14 +148,14 @@
               </li>
 
               <li class="menu-item">
-                <a class="menu-link" href="galeria_fotos.php">
+                <a class="menu-link" href="galeria-fotos.php">
                   <span class="dot"></span>
                   <span class="title">Fotos</span>
                 </a>
               </li>
 
               <li class="menu-item">
-                <a class="menu-link" href="galeria_videos.php">
+                <a class="menu-link" href="galeria-videos.php">
                   <span class="dot"></span>
                   <span class="title">Vídeos</span>
                 </a>

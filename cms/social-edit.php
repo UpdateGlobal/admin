@@ -21,8 +21,8 @@ if($proceso=="Actualizar"){
   $cod_social   = $_POST['cod_social'];
   $type         = $_POST['type'];
   $links        = mysqli_real_escape_string($enlaces, $_POST['links']);
-  $orden        = $_POST['orden'];
-  $estado       = $_POST['estado'];
+  if(isset($_POST['orden'])){$orden = $_POST['orden'];}else{$orden = 0;}
+  if(isset($_POST['estado'])){$estado = $_POST['estado'];}else{$estado = 0;}
   $actualizarSocial = "UPDATE social SET cod_social='$cod_social', type='$type', links='$links', orden='$orden', estado='$estado' WHERE cod_social='$cod_social'";
   $resultadoActualizar = mysqli_query($enlaces,$actualizarSocial) or die('Consulta fallida: ' . mysqli_error($enlaces));
   header("Location:sociales.php");

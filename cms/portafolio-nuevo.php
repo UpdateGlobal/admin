@@ -10,27 +10,25 @@ if (isset($_POST['proceso'])) {
 }
 
 if($proceso == "Registrar"){
-  $cod_categoria  = $_POST['cod_categoria'];
-  $nom_portafolio = mysqli_real_escape_string($enlaces, utf8_decode($_POST['nom_portafolio']));
-  $descripcion  = mysqli_real_escape_string($enlaces, utf8_decode($_POST['descripcion']));
-  $type         = $_POST['type'];
-  $video        = $_POST['video'];
-  $imagen       = $_POST['imagen'];
-  $orden        = $_POST['orden'];
-  $estado       = $_POST['estado'];
+  $cod_categoria   = $_POST['cod_categoria'];
+  $nom_portafolio  = mysqli_real_escape_string($enlaces, utf8_decode($_POST['nom_portafolio']));
+  $descripcion     = mysqli_real_escape_string($enlaces, utf8_decode($_POST['descripcion']));
+  $type            = $_POST['type'];
+  $video           = $_POST['video'];
+  $imagen          = $_POST['imagen'];
+  if(isset($_POST['orden'])){$orden = $_POST['orden'];}else{$orden = 0;}
+  if(isset($_POST['estado'])){$estado = $_POST['estado'];}else{$estado = 0;}
   
   $validarPortafolio = "SELECT * FROM portafolio WHERE nom_portafolio='$nom_portafolio'";
   $ejecutarValidar = mysqli_query($enlaces,$validarPortafolio) or die('Consulta fallida: ' . mysqli_error($enlaces));
   $numreg = mysqli_num_rows($ejecutarValidar);
   
-  if($numreg==0){
-    $insertarPortafolio = "INSERT INTO portafolio (cod_categoria, nom_portafolio, descripcion, type, video, imagen, orden, estado) VALUE ('$cod_categoria', '$nom_portafolio', '$descripcion', '$type', '$video', '$imagen', '$orden', '$estado')";
-    $resultadoInsertar = mysqli_query($enlaces,$insertarPortafolio) or die('Consulta fallida: ' . mysqli_error($enlaces));
-    $mensaje = "<div class='alert alert-success' role='alert'>
+  $insertarPortafolio = "INSERT INTO portafolio (cod_categoria, nom_portafolio, descripcion, type, video, imagen, orden, estado) VALUE ('$cod_categoria', '$nom_portafolio', '$descripcion', '$type', '$video', '$imagen', '$orden', '$estado')";
+  $resultadoInsertar = mysqli_query($enlaces,$insertarPortafolio) or die('Consulta fallida: ' . mysqli_error($enlaces));
+  $mensaje = "<div class='alert alert-success' role='alert'>
             <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
             <p><strong>Nota:</strong> El trabajo se registr&oacute; con exitosamente. <a href='portafolio.php'>Ir a Portafolio</a></p>
           </div>";
-  }
 }
 ?>
 <!DOCTYPE html>
@@ -43,12 +41,12 @@ if($proceso == "Registrar"){
       if(document.fcms.nom_portafolio.value==""){
         alert("Debe escribir un título");
         document.fcms.nom_portafolio.focus();
-        return;
+        return; 
       }
       if(document.fcms.imagen.value==""){
         alert("Debe subir una imagen");
         document.fcms.imagen.focus();
-        return;
+        return; 
       }
       
       document.fcms.action = "portafolio-nuevo.php";
@@ -60,7 +58,7 @@ if($proceso == "Registrar"){
       url = "agregar-foto.php?id=" + codigo;
       AbrirCentro(url,'Agregar', 475, 180, 'no', 'no');
     }
-    function soloNumeros(e){
+    function soloNumeros(e){ 
       var key = window.Event ? e.which : e.keyCode 
       return ((key >= 48 && key <= 57) || (key==8)) 
     }
@@ -90,34 +88,106 @@ if($proceso == "Registrar"){
       </header><!--/.header -->
       <div class="main-content">
         <div class="card">
-          <h4 class="card-title"><strong>Nuevo Portafolio</strong></h4>
+          <h4 class="card-title"><strong>Registrar Trabajo</strong></h4>
           <form class="fcms" name="fcms" method="post" action="" data-provide="validation" data-disable="false">
             <div class="card-body">
               <?php if(isset($mensaje)){ echo $mensaje; } else {}; ?>
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
+                  <label class="col-form-label require" for="nom_portafolio">Título:</label>
+                </div>
+                <div class="col-8 col-lg-10">
+                  <input class="form-control" name="nom_portafolio" type="text" id="nom_portafolio" required>
+                  <div class="invalid-feedback"></div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-4 col-lg-2">
+                  <label class="col-form-label" for="categoria">Categor&iacute;a:</label>
+                </div>
+                <div class="col-8 col-lg-10">
+                  <select class="form-control" id="categoria" name="cod_categoria">
+                    <?php 
+                      if($cod_categoria == ""){
+                        $consultaCat = "SELECT * FROM portafolio_categorias WHERE estado='1'";
+                        $resultaCat = mysqli_query($enlaces,$consultaCat) or die('Consulta fallida: ' . mysqli_error($enlaces));
+                        while($filaCat = mysqli_fetch_array($resultaCat)){
+                          $xcodCat = $filaCat['cod_categoria'];
+                          $xnomCat = utf8_encode($filaCat['categoria']);
+                          echo '<option value='.$xcodCat.'>'.$xnomCat.'</option>';
+                        }
+                        }else{
+                          $consultaCat = "SELECT * FROM portafolio_categorias WHERE cod_categoria='$cod_categoria'";
+                          $resultaCat = mysqli_query($enlaces,$consultaCat) or die('Consulta fallida: ' . mysqli_error($enlaces));
+                          while($filaCat = mysqli_fetch_array($resultaCat)){
+                            $xcodCat = $filaCat['cod_categoria'];
+                            $xnomCat = utf8_encode($filaCat['categoria']);
+                            echo '<option value='.$xcodCat.' selected="selected">'.$xnomCat.'</option>';
+                          }
+                          $consultaCat = "SELECT * FROM portafolio_categorias WHERE cod_categoria!='$cod_categoria'";
+                          $resultaCat = mysqli_query($enlaces,$consultaCat) or die('Consulta fallida: ' . mysqli_error($enlaces));
+                          while($filaCat = mysqli_fetch_array($resultaCat)){
+                            $xcodCat = $filaCat['cod_categoria'];
+                            $xnomCat = utf8_encode($filaCat['categoria']);
+                            echo '<option value='.$xcodCat.'>'.$xnomCat.'</option>';
+                        }
+                      }
+                    ?>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-4 col-lg-2">
+                  <label class="col-form-label" for="descripcion">Descripci&oacute;n:</label>
+                </div>
+                <div class="col-8 col-lg-10">
+                  <textarea data-provide="summernote" id="descripcion" name="descripcion" data-min-height="150"></textarea>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-4 col-lg-2">
+                  <label class="col-form-label" for="tipo">Tipo:</label>
+                </div>
+                <div class="col-8 col-lg-10">
+                  <label class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" name="type" value="I" checked>
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description"> Imagen</span>
+                  </label>
+                  <label class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" name="type" value="V">
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description"> Vídeo</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-4 col-lg-2">
+                  <label class="col-form-label" for="video">Vídeo:</label><br>
+                  <small>(Enlace)</small>
+                </div>
+                <div class="col-8 col-lg-10">
+                  <input class="form-control" name="video" type="text" id="video">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-4 col-lg-2">
                   <label class="col-form-label require" for="imagen">Imagen:</label><br>
-                  <small>(1800px x 500px)</small>
+                  <small>(-px x -px)</small>
                 </div>
                 <div class="col-4 col-lg-8">
                   <input class="form-control" id="imagen" name="imagen" type="text" required>
                   <div class="invalid-feedback"></div>
                 </div>
                 <div class="col-4 col-lg-2">
-                  <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('BAN');" /><i class="fa fa-save"></i> Examinar</button>
+                  <button class="btn btn-info" type="button" name="boton2" onClick="javascript:Imagen('IPR');" /><i class="fa fa-save"></i> Examinar</button>
                 </div>
               </div>
-
-              <div class="form-group row">
-                <div class="col-4 col-lg-2">
-                  <label class="col-form-label" for="titulo">Titulo:</label>
-                </div>
-                <div class="col-8 col-lg-10">
-                  <input class="form-control" name="titulo" type="text" id="titulo" />
-                </div>
-              </div>
-
-
 
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
@@ -140,8 +210,8 @@ if($proceso == "Registrar"){
             </div>
 
             <footer class="card-footer">
-              <a href="banners.php" class="btn btn-secondary"><i class="fa fa-times"></i> Cancelar</a>
-              <button class="btn btn-bold btn-primary" type="button" name="boton" onClick="javascript:Validar();" /><i class="fa fa-chevron-circle-right"></i> Registrar Banner</button>
+              <a href="portafolio.php" class="btn btn-secondary"><i class="fa fa-times"></i> Cancelar</a>
+              <button class="btn btn-bold btn-primary" type="button" name="boton" onClick="javascript:Validar();" /><i class="fa fa-chevron-circle-right"></i> Registrar Trabajo</button>
               <input type="hidden" name="proceso">
             </footer>
 
