@@ -93,7 +93,7 @@ if($proceso == "Registrar"){
                             	<div class="form-int">
                                     <div class="row">
                                     	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-	                                        <label>T&iacute;tulo: *</label>
+	                                        <label> *</label>
                                         </div>
                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                         	<input name="titulo" type="text" id="titulo" />
@@ -101,7 +101,7 @@ if($proceso == "Registrar"){
                                     </div>
                                     <div class="row">
                                     	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-	                                        <label>Descripci&oacute;n:</label>
+	                                        <label></label>
                                         </div>
                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                                         	<textarea name="descripcion" id="descripcion"></textarea>

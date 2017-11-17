@@ -135,7 +135,7 @@
           <li class="menu-item <?php echo ($menu == "galeria" ? "active" : "")?>">
             <a class="menu-link" href="#">
               <span class="icon fa fa-picture-o"></span>
-              <span class="title">Galería</span>
+              <span class="title">Galer&iacute;a</span>
               <span class="arrow"></span>
             </a>
 
@@ -157,7 +157,7 @@
               <li class="menu-item">
                 <a class="menu-link" href="galeria-videos.php">
                   <span class="dot"></span>
-                  <span class="title">Vídeos</span>
+                  <span class="title">V&iacute;deos</span>
                 </a>
               </li>
 
@@ -177,14 +177,14 @@
               <li class="menu-item">
                 <a class="menu-link" href="productos_categorias.php">
                   <span class="dot"></span>
-                  <span class="title">Categorías</span>
+                  <span class="title">Categor&iacute;as</span>
                 </a>
               </li>
 
               <li class="menu-item">
                 <a class="menu-link" href="productos_subcategorias.php">
                   <span class="dot"></span>
-                  <span class="title">Sub-categoría</span>
+                  <span class="title">Sub-categor&iacute;a</span>
                 </a>
               </li>
 
@@ -218,7 +218,7 @@
             </a>
           </li>
 
-          <li class="menu-category">Contácto</li>
+          <li class="menu-category">Contacto</li>
 
           <li class="menu-item <?php echo ($menu == "contacto" ? "active" : "")?>">
             <a class="menu-link" href="contacto.php">
