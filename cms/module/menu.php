@@ -101,7 +101,7 @@
           </li>
 
           <li class="menu-item <?php echo ($menu == "portafolio" ? "active" : "")?>">
-            <a class="menu-link" href="#">
+            <a class="menu-link <?php echo ($menu == "nosotros" ? "open" : "") ?>"  href="#">
               <span class="icon fa fa-folder-open"></span>
               <span class="title">Portafolio</span>
               <span class="arrow"></span>
@@ -175,14 +175,14 @@
 
             <ul class="menu-submenu">
               <li class="menu-item">
-                <a class="menu-link" href="productos_categorias.php">
+                <a class="menu-link" href="productos-categorias.php">
                   <span class="dot"></span>
                   <span class="title">Categor&iacute;as</span>
                 </a>
               </li>
 
               <li class="menu-item">
-                <a class="menu-link" href="productos_subcategorias.php">
+                <a class="menu-link" href="productos-subcategorias.php">
                   <span class="dot"></span>
                   <span class="title">Sub-categor&iacute;a</span>
                 </a>
@@ -196,14 +196,14 @@
               </li>
 
               <li class="menu-item">
-                <a class="menu-link" href="productos_fotos.php">
+                <a class="menu-link" href="productos-fotos.php">
                   <span class="dot"></span>
                   <span class="title">Fotos</span>
                 </a>
               </li>
 
               <li class="menu-item">
-                <a class="menu-link" href="productos_pedidos.php">
+                <a class="menu-link" href="productos-pedidos.php">
                   <span class="dot"></span>
                   <span class="title">Pedidos</span>
                 </a>

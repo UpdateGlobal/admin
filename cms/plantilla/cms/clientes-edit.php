@@ -1,7 +1,7 @@
 <?php include "modulos/conexion.php"; ?>
 <?php include "modulos/verificar.php"; ?>
 <?php
-$cod_cliente		= $_REQUEST['cod_cliente'];
+$cod_cliente	= $_REQUEST['cod_cliente'];
 if (isset($_REQUEST['proceso'])) {
 	$proceso 	= $_POST['proceso'];
 } else {

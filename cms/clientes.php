@@ -17,13 +17,13 @@ if ($eliminar == "true") {
       $x++;
       if ($x == 1) {
         $sql = "DELETE FROM clientes WHERE cod_cliente=$id_cliente";
-      } else { 
+      } else {
         $sql = $sql . " OR cod_cliente=$id_cliente";
       }
     }
   }
   mysqli_free_result($sqlResultado);
-  if ($x > 0) { 
+  if ($x > 0) {
     $rs = mysqli_query($enlaces,$sql) or die('Consulta fallida: ' . mysqli_error($enlaces));
   }
   header ("Location:clientes.php");
@@ -134,10 +134,10 @@ if ($eliminar == "true") {
                         <td><strong>
                           <?php if($xEstado=="1"){ echo "[Activo]"; }else{ echo "[Inactivo]"; } ?>
                         </strong></td>
-                        <td><a class="boton-eliminar <?php if($xVisitante=="Si"){ ?>boton-eliminar-bloqueado<?php } ?>" href="<?php if($xVisitante=="Si"){ ?>javascript:visitante();<?php }else{ ?>clientes-delete.php?cod_cliente=<?php echo $xCodigo; ?><?php } ?>"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
-                        <td><a class="boton-editar <?php if($xVisitante=="Si"){ ?>boton-eliminar-bloqueado<?php } ?>" href="<?php if($xVisitante=="Si"){ ?>javascript:visitante();<?php }else{ ?>clientes-edit.php?cod_cliente=<?php echo $xCodigo; ?><?php } ?>"><i class="fa fa-pencil-square" aria-hidden="true"></i></a></td>
+                        <td><a class="boton-eliminar <?php if($xVisitante=="1"){ ?>boton-eliminar-bloqueado<?php } ?>" href="<?php if($xVisitante=="1"){ ?>javascript:visitante();<?php }else{ ?>clientes-delete.php?cod_cliente=<?php echo $xCodigo; ?><?php } ?>"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                        <td><a class="boton-editar <?php if($xVisitante=="1"){ ?>boton-eliminar-bloqueado<?php } ?>" href="<?php if($xVisitante=="1"){ ?>javascript:visitante();<?php }else{ ?>clientes-edit.php?cod_cliente=<?php echo $xCodigo; ?><?php } ?>"><i class="fa fa-pencil-square" aria-hidden="true"></i></a></td>
                         <td>
-                          <?php if($xVisitante=="No"){ ?>
+                          <?php if($xVisitante=="0"){ ?>
                           <div class="hidden">
                             <label class="custom-control custom-control-lg custom-checkbox" for="chkbx-<?php echo $xCodigo; ?>">
                               <input type="checkbox" class="custom-control-input" id="chkbx-<?php echo $xCodigo; ?>" name="chk<?php echo $xCodigo; ?>" />
