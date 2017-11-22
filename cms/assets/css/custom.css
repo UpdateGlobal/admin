@@ -321,6 +321,10 @@ label span {
 .control-group.success .fileupload .fileupload-preview{color:#468847;}
 .control-group.success .fileupload .thumbnail{border-color:#468847;}
 
+.table-custom-monto td {
+    vertical-align: top;
+}
+
 
 @media only screen and (max-width:1199px){
 
