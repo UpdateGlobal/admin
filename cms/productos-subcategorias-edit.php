@@ -12,19 +12,19 @@ if($proceso == ""){
   $resultadoSubCat = mysqli_query($enlaces, $consultaSubCat);
   $filaSC = mysqli_fetch_array($resultadoSubCat);
   $cod_sub_categoria    = $filaSC['cod_sub_categoria'];
-  $cod_categoria  = $filaSC['cod_categoria'];
-  $subcategoria   = htmlspecialchars(utf8_encode($filaSC['subcategoria']));
-  $imagen         = $filaSC['imagen'];
-  $orden          = $filaSC['orden'];
-  $estado         = $filaSC['estado'];
+  $cod_categoria        = $filaSC['cod_categoria'];
+  $subcategoria         = htmlspecialchars(utf8_encode($filaSC['subcategoria']));
+  $imagen               = $filaSC['imagen'];
+  $orden                = $filaSC['orden'];
+  $estado               = $filaSC['estado'];
 }
 if($proceso == "Actualizar"){
   $cod_sub_categoria    = $_POST['cod_sub_categoria'];
-  $cod_categoria  = $_POST['cod_categoria'];
-  $subcategoria   = mysqli_real_escape_string($enlaces,utf8_decode($_POST['subcategoria']));
-  $imagen         = $_POST['imagen'];
-  $orden          = $_POST['orden'];
-  $estado         = $_POST['estado'];
+  $cod_categoria        = $_POST['cod_categoria'];
+  $subcategoria         = mysqli_real_escape_string($enlaces,utf8_decode($_POST['subcategoria']));
+  $imagen               = $_POST['imagen'];
+  $orden                = $_POST['orden'];
+  $estado               = $_POST['estado'];
   
   $actualizarSubCategoria = "UPDATE productos_sub_categorias SET cod_sub_categoria='$cod_sub_categoria', cod_categoria='$cod_categoria', subcategoria='$subcategoria', imagen='$imagen', orden='$orden', estado='$estado' WHERE cod_sub_categoria='$cod_sub_categoria'";
   $resultadoActualizar = mysqli_query($enlaces, $actualizarSubCategoria);
@@ -83,14 +83,14 @@ if($proceso == "Actualizar"){
       </header><!--/.header -->
       <div class="main-content">
         <div class="card">
-          <h4 class="card-title"><strong>Nueva SubCategor&iacute;a</strong></h4>
+          <h4 class="card-title"><strong>Editar SubCategor&iacute;a</strong></h4>
           <form class="fcms" name="fcms" method="post" action="" data-provide="validation" data-disable="false">
             <div class="card-body">
               <?php if(isset($mensaje)){ echo $mensaje; } else {}; ?>
 
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
-                  <label class="col-form-label required" for="categoria">Categor&iacute;as:</label>
+                  <label class="col-form-label" for="categoria">Categor&iacute;as:</label>
                 </div>
                 <div class="col-8 col-lg-10">
                   <select class="form-control" id="categoria" name="cod_categoria">
@@ -111,14 +111,14 @@ if($proceso == "Actualizar"){
                           $xCategoria = utf8_encode($filaCat['categoria']);
                       ?>
                       <option value="<?php echo $xCodcate; ?>"><?php echo $xCategoria; ?></option>
-                      <?php } ?>
+                    <?php } ?>
                   </select>
                 </div>
               </div>
 
               <div class="form-group row">
                 <div class="col-4 col-lg-2">
-                  <label>Subcategor&iacute;a:</label>
+                  <label class="col-form-label" for="subcetegoria">Subcategor&iacute;a:</label>
                 </div>
                 <div class="col-8 col-lg-10">
                   <input class="form-control" name="subcategoria" type="text" id="subcategoria" value="<?php echo $subcategoria; ?>" />
@@ -164,7 +164,7 @@ if($proceso == "Actualizar"){
 
             <footer class="card-footer">
               <a href="productos-subcategorias.php" class="btn btn-secondary"><i class="fa fa-times"></i> Cancelar</a>
-              <button class="btn btn-bold btn-primary" type="button" name="boton" onClick="javascript:Validar();" /><i class="fa fa-refresh"></i> Publicar SubCategor&iacute;a</button>
+              <button class="btn btn-bold btn-primary" type="button" name="boton" onClick="javascript:Validar();" /><i class="fa fa-refresh"></i> Editar SubCategor&iacute;a</button>
               <input type="hidden" name="proceso">
               <input type="hidden" name="cod_sub_categoria" value="<?php echo $cod_sub_categoria; ?>">
             </footer>

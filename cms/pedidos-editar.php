@@ -143,7 +143,7 @@ $observaciones  = utf8_encode($filacli['observaciones']);
                   <label><span><strong>Nota:</strong> Cancele el pedido para borrarlo, <u>una vez se haya realizado el pago</u>.</span></label>
                 </div>
                 <footer class="card-footer">
-                  <a href="pedidos.php" class="btn btn-secondary"><i class="fa fa-reply"></i> Volver a Pedidos</a>
+                  <a href="productos-pedidos.php" class="btn btn-secondary"><i class="fa fa-reply"></i> Volver a Pedidos</a>
                   <a href="<?php if($xVisitante=="0"){ ?>pedidos-delete.php?cod_orden=<?php echo $xCodOrden; ?><?php }else{ ?>javascript:visitante();<?php } ?>" class="btn btn-bold btn-danger"><i class="fa fa-trash"></i> Cancelar Pedido</a>
                 </footer>
               </div>

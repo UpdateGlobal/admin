@@ -45,7 +45,7 @@
               <h4 class="card-title"><strong>Lista de Fotos Trabajo</strong></h4>
               <div class="card-body">
                 <form name="fcms" method="post" action="">
-                  <table class="table">
+                  <table class="table" data-provide="datatables">
                     <thead>
                       <tr>
                         <th width="20%" scope="col">Trabajo</th>

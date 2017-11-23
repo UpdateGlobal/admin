@@ -94,23 +94,22 @@ if ($eliminar == "true") {
             <div class="card card-bordered">
               <h4 class="card-title"><strong>Lista de Noticias</strong></h4>
               <div class="card-body">
-                <a class="btn btn-info" href="<?php if($xVisitante=="0"){ ?>noticias-nuevo.php<?php }else{ ?>javascript:visitante();<?php } ?>"><i class="fa fa-plus" aria-hidden="true"> </i> A&ntilde;adir nuevo</a>
+                <a class="btn btn-info" href="<?php if($xVisitante=="0"){ ?>noticias-nuevo.php<?php }else{ ?>javascript:visitante();<?php } ?>"><i class="fa fa-plus"></i> A&ntilde;adir nuevo</a>
                 <hr>
                 <form name="fcms" method="post" action="">
-                  <table class="table">
+                  <table class="table" data-provide="datatables">
                     <thead>
                       <tr>
-                        <tr>
-                          <th width="35%" scope="col">Imagen
-                            <input type="hidden" name="proceso">
-                            <input type="hidden" name="eliminar" value="false">
-                          </th>
-                          <th width="20%" scope="col">T&iacute;tulo</th>
-                          <th width="20%" scope="col">Fecha</th>
-                          <th width="10%" scope="col">Estado</th>
-                          <th width="5%" scope="col">&nbsp;</th>
-                          <th width="5%" scope="col">&nbsp;</th>
-                          <th width="5%" scope="col"><a href="javascript:Procedimiento('eliminar','N');"><img src="assets/img/borrar.png" width="18" height="25" alt="Borrar"></a></th>
+                        <th width="35%" scope="col">Imagen
+                          <input type="hidden" name="proceso">
+                          <input type="hidden" name="eliminar" value="false">
+                        </th>
+                        <th width="20%" scope="col">T&iacute;tulo</th>
+                        <th width="20%" scope="col">Fecha</th>
+                        <th width="10%" scope="col">Estado</th>
+                        <th width="5%" scope="col">&nbsp;</th>
+                        <th width="5%" scope="col">&nbsp;</th>
+                        <th width="5%" scope="col"><a href="javascript:Procedimiento('eliminar','N');"><img src="assets/img/borrar.png" width="18" height="25" alt="Borrar"></a></th>
                       </tr>
                     </thead>
                     <tbody>

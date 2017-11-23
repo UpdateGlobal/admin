@@ -1,9 +1,7 @@
 <?php include "modulos/conexion.php"; ?>
 <?php include "modulos/verificar.php"; ?>
 <?php include "modulos/clean.php"; ?>
-<?php
-$num = ""; 
-?>
+<?php $num = ""; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

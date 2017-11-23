@@ -37,7 +37,7 @@
               <span class="arrow"></span>
             </a>
 
-            <ul class="menu-submenu">
+            <ul class="menu-submenu" <?php echo ($menu == "inicio" ? "style='display:block;'" : "")?> >
               <li class="menu-item">
                 <a class="menu-link" href="metatags.php">
                   <span class="dot"></span>
@@ -75,7 +75,7 @@
               <span class="arrow"></span>
             </a>
 
-            <ul class="menu-submenu">
+            <ul class="menu-submenu" <?php echo ($menu == "servicios" ? "style='display:block;'" : "")?> >
               <li class="menu-item">
                 <a class="menu-link" href="servicios.php">
                   <span class="dot"></span>
@@ -101,13 +101,13 @@
           </li>
 
           <li class="menu-item <?php echo ($menu == "portafolio" ? "active" : "")?>">
-            <a class="menu-link <?php echo ($menu == "nosotros" ? "open" : "") ?>"  href="#">
+            <a class="menu-link <?php echo ($menu == "portafolio" ? "open" : "") ?>"  href="#">
               <span class="icon fa fa-folder-open"></span>
               <span class="title">Portafolio</span>
               <span class="arrow"></span>
             </a>
 
-            <ul class="menu-submenu">
+            <ul class="menu-submenu" <?php echo ($menu == "portafolio" ? "style='display:block;'" : "")?> >
               <li class="menu-item">
                 <a class="menu-link" href="portafolio-categorias.php">
                   <span class="dot"></span>
@@ -133,13 +133,13 @@
           </li>
 
           <li class="menu-item <?php echo ($menu == "galeria" ? "active" : "")?>">
-            <a class="menu-link" href="#">
+            <a class="menu-link <?php echo ($menu == "galeria" ? "open" : "") ?>" href="#" >
               <span class="icon fa fa-picture-o"></span>
               <span class="title">Galer&iacute;a</span>
               <span class="arrow"></span>
             </a>
 
-            <ul class="menu-submenu">
+            <ul class="menu-submenu" <?php echo ($menu == "galeria" ? "style='display:block;'" : "")?>>
               <li class="menu-item">
                 <a class="menu-link" href="galeria.php">
                   <span class="dot"></span>
@@ -167,13 +167,13 @@
           <li class="menu-category">Tienda</li>
 
           <li class="menu-item <?php echo ($menu == "productos" ? "active" : "")?>">
-            <a class="menu-link" href="#">
+            <a class="menu-link <?php echo ($menu == "productos" ? "open" : "") ?>" href="#">
               <span class="icon fa fa-cube"></span>
               <span class="title">Productos</span>
               <span class="arrow"></span>
             </a>
 
-            <ul class="menu-submenu">
+            <ul class="menu-submenu" <?php echo ($menu == "productos" ? "style='display:block;'" : "")?>>
               <li class="menu-item">
                 <a class="menu-link" href="productos-categorias.php">
                   <span class="dot"></span>

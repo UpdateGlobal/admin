@@ -40,16 +40,14 @@
         <div class="row">
           <div class="col-md-12">
             <div class="card card-bordered">
-
               <h4 class="card-title"><strong>Lista de Albums con Fotos</strong></h4>
               <div class="card-body">
                 <form name="fcms" method="post" action="">
                   <table class="table">
                     <thead>
                       <tr>
-                        <th width="20%" scope="col">Trabajo</th>
-                        <th width="20%" scope="col">Categoria</th>
-                        <th width="40%" scope="col">Imagen</th>
+                        <th width="40%" scope="col">Album</th>
+                        <th width="50%" scope="col">Imagen</th>
                         <th width="5%" scope="col">Orden</th>
                         <th width="5%" scope="col">&nbsp;</th>
                       </tr>

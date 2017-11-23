@@ -44,26 +44,26 @@ if ($eliminar == "true") {
       }
     </style>
     <script>
-  function Procedimiento(proceso,seccion){
-    document.fcms.proceso.value = "";
-    estado = 0;
-    for (i = 0; i < document.fcms.length; i++)
-    if(document.fcms.elements[i].name.substring(0,3) == "chk"){
-      if(document.fcms.elements[i].checked == true){
-        estado = 1
+      function Procedimiento(proceso,seccion){
+        document.fcms.proceso.value = "";
+        estado = 0;
+        for (i = 0; i < document.fcms.length; i++)
+        if(document.fcms.elements[i].name.substring(0,3) == "chk"){
+          if(document.fcms.elements[i].checked == true){
+            estado = 1
+          }
+        }
+        if (estado == 0) {
+          if (seccion == "N"){
+            alert("Debes de seleccionar una Imagen.")
+          }
+          return
+        }
+        procedimiento = "document.fcms." + proceso + ".value = true"
+        eval(procedimiento)
+        document.fcms.submit()  
       }
-    }
-    if (estado == 0) {
-      if (seccion == "N"){
-        alert("Debes de seleccionar una Imagen.")
-      }
-      return
-    }
-    procedimiento = "document.fcms." + proceso + ".value = true"
-    eval(procedimiento)
-    document.fcms.submit()  
-  }
-  </script>
+    </script>
     <script src="assets/js/visitante-alert.js"></script>
   </head>
   <body>
@@ -152,28 +152,6 @@ if ($eliminar == "true") {
                     </tbody>
                   </table>
                 </form>
-                <nav>
-                  <ul class="pagination justify-content-center">
-                    <li class="page-item disabled">
-                      <a class="page-link" href="#">
-                        <span class="ti-arrow-left"></span>
-                      </a>
-                    </li>
-                    <li class="page-item active">
-                      <a class="page-link" href="#">1</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                    <li class="page-item"><a class="page-link" href="#">5</a></li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">
-                        <span class="ti-arrow-right"></span>
-                      </a>
-                    </li>
-                  </ul>
-                </nav>
-
               </div>
             </div>
           </div>

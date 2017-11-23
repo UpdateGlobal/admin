@@ -1,7 +1,6 @@
 <?php include("module/conexion.php"); ?>
 <?php include("module/verificar.php"); ?>
 <?php
-$num = "";
 if (isset($_REQUEST['eliminar'])) {
   $eliminar = $_POST['eliminar'];
 } else {
@@ -102,10 +101,11 @@ if ($eliminar == "true") {
                   <table class="table">
                     <thead>
                       <tr>
-                        <th width="60%" scope="col">Categor&iacute;a
+                        <th width="30%" scope="col">Categor&iacute;a
                           <input type="hidden" name="proceso">
                           <input type="hidden" name="eliminar" value="false">
                         </th>
+                        <th width="30%" scope="col">Imagen</th>
                         <th width="20%" scope="col">Orden</th>
                         <th width="5%" scope="col">Estado</th>
                         <th width="5%" scope="col">&nbsp;</th>
@@ -123,10 +123,14 @@ if ($eliminar == "true") {
                           $xImagen    = $filaCat['imagen'];
                           $xOrden     = $filaCat['orden'];
                           $xEstado    = $filaCat['estado'];
-                          $num++;
                       ?>
                       <tr>
                         <td><?php echo $xCategoria; ?></td>
+                        <td>
+                          <?php if(isset($xImagen)){ ?>
+                            <img class="d-block b-1 border-light hover-shadow-2 p-1 img-admin" src="assets/img/productos/categorias/<?php echo $xImagen; ?>" />
+                          <?php }else{ } ?>
+                        </td>
                         <td><?php echo $xOrden; ?></td>
                         <td><?php if($xCodigo!="0"){?>
                           <strong><?php if($xEstado=="1"){ echo "[Activo]"; }else{ echo "[Inactivo]";} ?></strong>
@@ -136,12 +140,14 @@ if ($eliminar == "true") {
                         </td>
                         <td><?php if($xCodigo!="0"){?><a class="boton-editar" href="productos-categorias-edit.php?cod_categoria=<?php echo $xCodigo; ?>"><i class="fa fa-pencil-square"></i></a><?php }?></td>
                         <td><?php if($xVisitante=="0"){?>
+                          <?php if($xCodigo!="0"){?>
                           <div class="hidden">
                             <label class="custom-control custom-control-lg custom-checkbox" for="chkbx-<?php echo $xCodigo; ?>">
                               <input type="checkbox" class="custom-control-input" id="chkbx-<?php echo $xCodigo; ?>" name="chk<?php echo $xCodigo; ?>" />
                               <span class="custom-control-indicator"></span>
                             </label>
                           </div><?php } ?>
+                          <?php } ?>
                         </td>
                       </tr>
                       <?php

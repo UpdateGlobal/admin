@@ -16,13 +16,13 @@ if ($eliminar == "true") {
       $x++;
       if ($x == 1) {
           $sql = "DELETE FROM productos_sub_categorias WHERE cod_sub_categoria=$id_subcategoria";
-        } else { 
+        } else {
           $sql = $sql . " OR cod_sub_categoria=$id_subcategoria";
         }
     }
   }
   mysqli_free_result($sqlResultado);
-  if ($x > 0) { 
+  if ($x > 0) {
     $rs = mysqli_query($enlaces, $sql);
   }
   header ("Location: productos-subcategorias.php");
@@ -33,15 +33,14 @@ if ($eliminar == "true") {
   <head>
     <?php header ('Content-type: text/html; charset=utf-8'); include("module/head.php"); ?>
     <style>
-      @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px)  {
+      @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
         td:nth-of-type(1):before { content: "Categorías"; }
         td:nth-of-type(2):before { content: "SubCategorías"; }
         td:nth-of-type(3):before { content: "Imagen"; }
-        td:nth-of-type(4):before { content: "Orden"; }
-        td:nth-of-type(5):before { content: "Estado"; }
+        td:nth-of-type(4):before { content: "Estado"; }
+        td:nth-of-type(5):before { content: ""; }
         td:nth-of-type(6):before { content: ""; }
         td:nth-of-type(7):before { content: ""; }
-        td:nth-of-type(8):before { content: ""; }
       }
     </style>
     <script>
@@ -55,17 +54,17 @@ if ($eliminar == "true") {
             estado = 1
           }
         }
-          
+
         if (estado == 0) {
           if (seccion == "N"){
             alert("Debes de seleccionar un categoria.")
           }
           return
         }
-          
+
         procedimiento = "document.fcms." + proceso + ".value = true"
         eval(procedimiento)
-        document.fcms.submit()   
+        document.fcms.submit()
       }
     </script>
     <script src="assets/js/visitante-alert.js"></script>
@@ -104,38 +103,33 @@ if ($eliminar == "true") {
                   <table class="table">
                     <thead>
                       <tr>
-                          <tr>
-                            <th width="20%" scope="col">Categor&iacute;a
-                              <input type="hidden" name="proceso">
-                              <input type="hidden" name="eliminar" value="false">
-                            </th>
-                            <th width="20%" scope="col">SubCategor&iacute;a</th>
-                            <th width="25%" scope="col">Imagen</th>
-                            <th width="10%" scope="col">Orden</th>
-                            <th width="5%" scope="col">Estado</th>
-                            <th width="5%" scope="col">&nbsp;</th>
-                            <th width="5%" scope="col">&nbsp;</th>
-                            <th width="5%" scope="col"><a href="javascript:Procedimiento('eliminar','N');"><img src="assets/img/borrar.png" width="18" height="25" alt="Borrar"></a></th>
-                          </tr>
+                        <th width="20%" scope="col">Categor&iacute;a
+                          <input type="hidden" name="proceso">
+                          <input type="hidden" name="eliminar" value="false">
+                        </th>
+                        <th width="20%" scope="col">SubCategor&iacute;a</th>
+                        <th width="35%" scope="col">Imagen</th>
+                        <th width="5%" scope="col">Estado</th>
+                        <th width="5%" scope="col">&nbsp;</th>
+                        <th width="5%" scope="col">&nbsp;</th>
+                        <th width="5%" scope="col"><a href="javascript:Procedimiento('eliminar','N');"><img src="assets/img/borrar.png" width="18" height="25" alt="Borrar"></a></th>
                       </tr>
                     </thead>
                     <tbody>
                       <?php
-                        $consultarSubCat = "SELECT cp.cod_categoria, cp.categoria, scp.* FROM productos_categorias as cp, productos_sub_categorias as scp WHERE scp.cod_categoria=cp.cod_categoria ORDER BY orden ASC";
+                        $consultarSubCat = "SELECT cp.cod_categoria, cp.categoria, scp.* FROM productos_categorias as cp, productos_sub_categorias as scp WHERE scp.cod_categoria=cp.cod_categoria ORDER BY categoria ASC";
                         $resultadoSubCat = mysqli_query($enlaces, $consultarSubCat);
                         while($filaSC = mysqli_fetch_array($resultadoSubCat)){
                           $xCodigo      = $filaSC['cod_sub_categoria'];
                           $xCategoria   = utf8_encode($filaSC['categoria']);
                           $xSCategoria  = utf8_encode($filaSC['subcategoria']);
                           $xImagen      = $filaSC['imagen'];
-                          $xOrden       = $filaSC['orden'];
                           $xEstado      = $filaSC['estado'];
                       ?>
                       <tr>
                         <td><?php echo $xCategoria; ?></td>
                         <td><?php echo $xSCategoria; ?></td>
                         <td><img class="d-block b-1 border-light hover-shadow-2 p-1 img-admin" src="assets/img/productos/subcategoria/<?php echo $xImagen; ?>" /></td>
-                        <td><?php echo $xOrden; ?></td>
                         <td><?php if($xCodigo!="0"){?><strong>
                           <?php if($xEstado=="1"){ echo "[Activo]"; }else{ echo "[Inactivo]";} ?>
                           </strong><?php } ?></td>
