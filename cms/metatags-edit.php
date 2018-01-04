@@ -158,7 +158,7 @@ if($proceso == "Actualizar"){
                 </div>
                 <div class="col-8 col-lg-10">
                   <?php if($xVisitante=="1"){ ?><p><?php echo $xKey; ?></p><?php } ?>
-                  <input class="form-control" id="key" name="key" type="<?php if($xVisitante=="1"){ ?>hidden<?php }else{ ?>text<?php } ?>" value="<?php echo $xKey; ?>">
+                  <input class="form-control" id="keywords" name="keywords" type="<?php if($xVisitante=="1"){ ?>hidden<?php }else{ ?>text<?php } ?>" value="<?php echo $xKey; ?>">
                   <div class="invalid-feedback"></div>
                 </div>
               </div>

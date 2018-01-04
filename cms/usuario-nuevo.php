@@ -88,12 +88,12 @@ if($proceso == "Registrar"){
     $resultadoInsertar = mysqli_query($enlaces,$insertarUsuarios) or die('Consulta fallida: ' . mysqli_error($enlaces));
     $mensaje = "<div class='alert alert-success' role='alert'>
             <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-            <p><strong>Nota:</strong> Usuario se registr&oacute; con exitosamente. Un email con sus datos de usuario ha sido enviado al email registrado (de no verlo revise su carpeta de spam). <a href='usuarios.php'>Ir a Usuarios</a></p>
+            <strong>Nota:</strong> Usuario se registr&oacute; con exitosamente. Un email con sus datos de usuario ha sido enviado al email registrado (de no verlo revise su carpeta de spam). <a href='usuarios.php'>Ir a Usuarios</a>
           </div>";
   }else{
     $mensaje = "<div class='alert alert-warning' role='alert'>
             <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-            <p><strong>Nota:</strong> Ops, el usuario o el email ya existe...</p>
+            <strong>Nota:</strong> Ops, el usuario o el email ya existe...
           </div>";
   }
 }
