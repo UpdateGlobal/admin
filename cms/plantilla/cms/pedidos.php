@@ -61,6 +61,7 @@
 								mysqli_free_result($resultadoCot);
 							?>
 							<hr>
+							
 							<form name="fcms" method="post" action="">
                                 <table class="text-center" width="100%" border="1">
                                 	<thead>

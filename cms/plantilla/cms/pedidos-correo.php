@@ -33,7 +33,7 @@ if($proceso == "Actualizar"){
 			if(document.fcms.cart_mail.value==""){
 				alert("¡El correo para los pedidos es obligatorio!");
 				document.fcms.cart_mail.focus();
-				return;	
+				return;
 			}
 			if (document.fcms.cart_mail.value.indexOf('@') == -1){
 				alert ("La \"dirección de email\" no es correcta");

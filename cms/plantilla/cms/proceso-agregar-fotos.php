@@ -415,7 +415,7 @@ if($id=='SERGAL'){
         </div> <!-- /widget-header -->
         <div class="widget-content">
             <div id="cajafoto">
-				<form action="" method="post" name="imagenes">
+				<form action="" id="imagenes" class="imagenes" method="post" name="imagenes">
                 	<div class="form-int">
                     	<div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

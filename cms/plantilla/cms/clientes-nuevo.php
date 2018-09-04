@@ -68,9 +68,8 @@ if($proceso == "Registrar"){
 			document.fcms.action = "clientes-nuevo.php";
 			document.fcms.proceso.value="Registrar";
 			document.fcms.submit();
-		}	
-		function soloNumeros(e) 
-		{ 
+		}
+		function soloNumeros(e){ 
 			var key = window.Event ? e.which : e.keyCode 
 			return ((key >= 48 && key <= 57) || (key==8)) 
 		}

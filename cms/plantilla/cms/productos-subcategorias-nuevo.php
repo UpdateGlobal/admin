@@ -34,16 +34,6 @@ if($proceso == "Registrar"){
 				document.fcms.subcategoria.focus();
 				return;	
 			}
-			if(document.fcms.imagen.value==""){
-				alert("Debe subir una imagen");
-				document.fcms.imagen.focus();
-				return;	
-			}
-			if(document.fcms.orden.value==""){
-				alert("Debe asignar un orden");
-				document.fcms.orden.focus();
-				return;	
-			}
 			document.fcms.action = "productos-subcategorias-nuevo.php";
 			document.fcms.proceso.value="Registrar";
 			document.fcms.submit();
